@@ -3,6 +3,68 @@ body {
     color:white;
     font-family:cursive;
 }
+@keyframes muswiggle {
+    0% {transform:rotate(0deg);}
+    25% {transform:rotate(5deg);}
+    50% {transform:rotate(0deg);}
+    75% {transform:rotate(-5deg);}
+    100% {transform:rotate(0deg);}
+}
+@keyframes likewiggle {
+    0% {transform:scale(1.2) translateY(-145px) translateX(0px);}
+    25% {transform:scale(1.2) translateY(-145px) translateX(2px);}
+    50% {transform:scale(1.2) translateY(-145px) translateX(0px);}
+    75% {transform:scale(1.2) translateY(-145px) translateX(-2px);}
+    100% {transform:scale(1.2) translateY(-145px) translateX(0px);}
+}
+@keyframes mewiggle {
+    0% {transform:scale(1.2) translateY(-65px);}
+    25% {transform:scale(1.25) translateY(-60px);}
+    50% {transform:scale(1.2) translateY(-65px);}
+    75% {transform:scale(1.15) translateY(-70px);}
+    100% {transform:scale(1.2) translateY(-65px);}
+}
+@keyframes projwiggle {
+    0% {transform:rotate(0deg)scale(1.2) translateY(-133px);}
+    25% {transform:rotate(1deg)scale(1.2) translateY(-133px);}
+    50% {transform:rotate(0deg)scale(1.2) translateY(-133px);}
+    75% {transform:rotate(-1deg)scale(1.2) translateY(-133px);}
+    100% {transform:rotate(0deg)scale(1.2) translateY(-133px);}
+}
+@keyframes contactwiggle {
+    0% {transform:scale(1.2) translateY(-84px);}
+    25% {transform:scale(1.2) translateY(-86px);}
+    50% {transform:scale(1.2) translateY(-84px);}
+    75% {transform:scale(1.2) translateY(-82px);}
+    100% {transform:scale(1.2) translateY(-84px);}
+}
+@keyframes miscwiggle {
+    0% {transform:scale(1.2) translateY(-154px) rotate(-60deg);}
+    25% {transform:scale(1.2) translateY(-154px) rotate(-70deg);}
+    50% {transform:scale(1.2) translateY(-154px) rotate(-80deg);}
+    75% {transform:scale(1.2) translateY(-154px) rotate(-90deg);}
+    100% {transform:scale(1.2) translateY(-154px) rotate(-100deg);}
+}
+
+.muswiggle {
+    animation: muswiggle 0.34s infinite;
+}
+.likewiggle {
+    animation: likewiggle 0.34s infinite;
+}
+.mewiggle {
+    animation: mewiggle 0.34s infinite;
+}
+.projwiggle {
+    animation: projwiggle 0.34s infinite;
+}
+.contactwiggle {
+    animation: contactwiggle 0.34s infinite;
+}
+.miscwiggle {
+    animation: miscwiggle 0.34s infinite;
+}
+
 #titletext {
     transition: transform ease 50ms;
     border:4px solid rgb(255, 255, 255);
