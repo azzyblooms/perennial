@@ -23,10 +23,10 @@ tbper.addEventListener('mousedown', () => {
 tbmus.addEventListener('mousedown', () => {
     window.location.href = ("music.html")
 })
-/*tblik.addEventListener('mousedown', () => {
+tblik.addEventListener('mousedown', () => {
     window.location.href = ("likes.html")
 })
-tbabt.addEventListener('mousedown', () => {
+/*tbabt.addEventListener('mousedown', () => {
     window.location.href = ("aboutme.html")
 })
 tbproj.addEventListener('mousedown', () => {

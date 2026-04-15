@@ -94,6 +94,60 @@ body {
     display:flex;
     justify-self:center;
 }
+#sidebox {
+    border:4px solid white;
+    border-radius:5px;
+    justify-content:center;
+    justify-self:center;
+    justify-items: center;
+    background-color:rgb(197, 115, 186);
+    display:block;
+    margin-top:10px;
+    right:50%;
+    transform: translateX(-190px);
+    padding-bottom:13px;
+    margin-top:127px;
+    width:350px;
+
+}
+#abttsimg {
+    align-self:center;
+    display:block;
+    border-color:rgb(192, 192, 192)
+}
+#ititbox {
+    font-size:30px;
+    display:block;
+    font-weight:bold;
+    border:4px solid white;
+    margin:10px;
+    padding:5px;
+    background-color:rgb(201, 61, 126)
+}
+#abtyap {
+    font-size:22px;
+    border:4px solid white;
+    border-radius:5px;
+    display:block;
+    background-color:rgb(201, 61, 126);
+    width:300px;
+    padding:10px;
+}
+#closeside {
+    position:fixed;
+    justify-self:left;
+    border:4px solid white;
+    border-top:none;
+    border-left:none;
+    border-radius:5px;
+    padding-left:5px;
+    padding-right:5px;
+    display:flex;
+    line-height:1;
+}
+#closeside:hover {
+    background-color: rgb(201, 61, 126);
+}
 #titletext {
     transition: transform ease 50ms;
     border:4px solid rgb(255, 255, 255);
@@ -109,6 +163,13 @@ body {
     justify-content:center;
     justify-self:center;
     margin-top:30px;
+}
+#musboxes {
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    justify-content: center;
 }
 #basicbox {
     border:4px solid white;
@@ -132,17 +193,21 @@ body {
     background-color:rgb(197, 115, 186);
     display:flex;
     justify-content:space-between;
+    
 }
 #musicbigbox {
     border:4px solid white;
     margin-top:40px;
-    display:none;
+    display:flex;
     width:500px;
     justify-self:center;
     height:1565px;
     border-radius:5px;
     background-color:rgb(197, 115, 186);
     justify-content:space-between;
+    flex-direction:column;
+    left: 50%;
+    transform: translateX(-189.5px);
 }
 #ihover {
     font-size:29px;
@@ -170,6 +235,7 @@ body {
     margin-left:10px;
     margin-top:5px;
     margin-right:10px;
+    transition:transform ease 200ms;
 }
 .otherimg {
     background-color:white;
@@ -180,7 +246,8 @@ body {
     transition:transform ease 200ms;
 }
 .otherimg:hover {
-    transform:scale(1.1)
+    transform:scale(1.1);
+    border-color:rgb(192, 192, 192);
 }
 #otherbox {
     border:4px solid white;
@@ -206,7 +273,11 @@ body {
     margin-left:10px;
 }
 .active {
-    background-color:rgb(211, 59, 130)
+    background-color:rgb(211, 59, 130);
+}
+.clarimg:hover {
+    transform:scale(1.1);
+    border-color:rgb(192, 192, 192);
 }
 .rightbox {
     display:inline-flex;
@@ -218,6 +289,10 @@ body {
     width:400px;
     margin-top:15px;
     margin-left:71px;
+}
+#abtts1 {
+    white-space:nowrap;
+    align-self:start;
 }
 #otherin {
     display:block;
