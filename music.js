@@ -139,8 +139,11 @@ mal.addEventListener('mouseleave', () => {
 
 closeside.addEventListener('mousedown', () => {
     hideSide();
+    clicksound.cloneNode(true).play();
 })
-
+closeside.addEventListener('mouseenter', () => {
+    hoversound.cloneNode(true).play();
+})
 pno.addEventListener('mousedown', () => {
     pno.style.borderColor = ("rgb(192, 192, 192)")
     abttsimg.src = ("images/piano.png")
