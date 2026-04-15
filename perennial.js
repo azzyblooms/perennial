@@ -7,6 +7,7 @@ const miscbutton = document.getElementById("miscbutton");
 const cooltext1 = document.getElementById("cooltext1");
 
 const hoversound = new Audio('audio/hover.mp3')
+const clicksound = new Audio('audio/click2.mp3')
 
 musicbutton.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();
@@ -61,4 +62,9 @@ mebutton.addEventListener('mouseenter', () => {
 mebutton.addEventListener('mouseleave', () => {
     mebutton.classList.remove("mewiggle");
     cooltext1.textContent = ("------------------")
+})
+
+musicbutton.addEventListener('mousedown', () => {
+    clicksound.play();
+    window.location.href = ("music.html")
 })
