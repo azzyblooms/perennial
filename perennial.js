@@ -9,6 +9,36 @@ const cooltext1 = document.getElementById("cooltext1");
 const hoversound = new Audio('audio/hover.mp3')
 const clicksound = new Audio('audio/click2.mp3')
 
+const tbper = document.getElementById("tbper")
+const tbmus = document.getElementById("tbmus")
+const tblik = document.getElementById("tblik")
+const tbabt = document.getElementById("tbabt")
+const tbproj = document.getElementById("tbproj")
+const tbcon = document.getElementById("tbcon")
+const tbmisc = document.getElementById("tbmisc")
+
+tbper.addEventListener('mousedown', () => {
+    window.location.href = ("index.html")
+})
+tbmus.addEventListener('mousedown', () => {
+    window.location.href = ("music.html")
+})
+/*tblik.addEventListener('mousedown', () => {
+    window.location.href = ("likes.html")
+})
+tbabt.addEventListener('mousedown', () => {
+    window.location.href = ("aboutme.html")
+})
+tbproj.addEventListener('mousedown', () => {
+    window.location.href = ("projects.html")
+})
+tbcon.addEventListener('mousedown', () => {
+    window.location.href = ("contact.html")
+})
+tbmisc.addEventListener('mousedown', () => {
+    window.location.href = ("misc.html")
+})
+*/
 musicbutton.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();
     musicbutton.classList.add("muswiggle");

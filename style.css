@@ -3,6 +3,29 @@ body {
     color:white;
     font-family:cursive;
 }
+#topbar {
+    border-bottom:4px solid white;
+    width:100vw;
+    height:50px;
+    background-color: rgb(197, 115, 186);
+    margin-left:-8px;
+    margin-top:-8px;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+}
+.tbtxt {
+    border: 2px solid white;
+    padding:4px;
+    white-space:nowrap;
+    margin-left:3px;
+    margin-right:3px;
+    transition:transform ease-in 100ms;
+}
+.tbtxt:hover {
+    background-color:rgb(212, 79, 141);
+    transform:scale(1.1)
+}
 @keyframes muswiggle {
     0% {transform:rotate(0deg);}
     25% {transform:rotate(5deg);}
@@ -75,10 +98,13 @@ body {
     transition: transform ease 50ms;
     border:4px solid rgb(255, 255, 255);
     display:flex;
-    width:400px;
+    width:500px;
+    height:50px;
+    align-items:center;
     border-radius:5px;
     background-color:rgb(197, 115, 186);
-    font-size:30px;
+    font-size:40px;
+    font-weight:bold;
     padding:10px;
     justify-content:center;
     justify-self:center;
@@ -110,13 +136,20 @@ body {
 #musicbigbox {
     border:4px solid white;
     margin-top:40px;
-    display:block;
+    display:none;
     width:500px;
     justify-self:center;
-    height:1465px;
+    height:1565px;
     border-radius:5px;
     background-color:rgb(197, 115, 186);
     justify-content:space-between;
+}
+#ihover {
+    font-size:29px;
+    font-weight:bold;
+    display:block;
+    margin:10px;
+    text-align:center; 
 }
 #iip {
     text-align:center;
@@ -142,12 +175,24 @@ body {
     background-color:white;
     border:4px solid white;
     border-radius:5px;
-    display:inline-flex;
+    display:inline-block;
     margin:10px;
     transition:transform ease 200ms;
 }
 .otherimg:hover {
     transform:scale(1.1)
+}
+#otherbox {
+    border:4px solid white;
+    margin-top:40px;
+    display:block;
+    padding:10px;
+    width:395px;
+    justify-self:center;
+    height:485px;
+    border-radius:5px;
+    background-color:rgb(211, 59, 130);
+    justify-content:space-between;
 }
 .leftbox {
     display:inline-flex;
