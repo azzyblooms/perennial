@@ -24,21 +24,21 @@ tbmus.addEventListener('mousedown', () => {
     window.location.href = ("music.html")
 })
 tblik.addEventListener('mousedown', () => {
-    window.location.href = ("likes.html")
+    window.location.href = ("wip.html")
 })
-/*tbabt.addEventListener('mousedown', () => {
-    window.location.href = ("aboutme.html")
+tbabt.addEventListener('mousedown', () => {
+    window.location.href = ("wip.html")
 })
 tbproj.addEventListener('mousedown', () => {
-    window.location.href = ("projects.html")
+    window.location.href = ("wip.html")
 })
 tbcon.addEventListener('mousedown', () => {
-    window.location.href = ("contact.html")
+    window.location.href = ("contacts.html")
 })
 tbmisc.addEventListener('mousedown', () => {
-    window.location.href = ("misc.html")
+    window.location.href = ("wip.html")
 })
-*/
+
 musicbutton.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();
     musicbutton.classList.add("muswiggle");
@@ -94,7 +94,23 @@ mebutton.addEventListener('mouseleave', () => {
     cooltext1.textContent = ("------------------")
 })
 
-musicbutton.addEventListener('mousedown', () => {
+projectbutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("music.html")
+    window.location.href = ("wip.html")
+})
+miscbutton.addEventListener('mousedown', () => {
+    clicksound.play();
+    window.location.href = ("wip.html")
+})
+contactbutton.addEventListener('mousedown', () => {
+    clicksound.play();
+    window.location.href = ("contacts.html")
+})
+likebutton.addEventListener('mousedown', () => {
+    clicksound.play();
+    window.location.href = ("wip.html")
+})
+mebutton.addEventListener('mousedown', () => {
+    clicksound.play();
+    window.location.href = ("wip.html")
 })
