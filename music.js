@@ -152,7 +152,7 @@ pno.addEventListener('mousedown', () => {
         pno.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("images/piano.png")
         ititbox.textContent = ("piano")
-        abtyap.textContent = ("the piano was my first real instrument. my family put me into lessons when i was like 3 or 4 (i lowkey dont remember 😭) and it was pretty alright! i like the piano but it started to feel like a chore instead of an instrument i actively enjoyed and wanted to pursue, and i stopped taking lessons for it in 2024. i still play the piano, but not as often as i once did, and i'm not quite as good as i was before. i used to play piano in SIDEQUEST OTTAWA (until i quit 💀) and now i mostly do it for fun. i might pick it up again and do my rcm exams tho bc it'll probably be useful!!!! <br><br> tl;dr im glad i learned piano and its a pretty decent instrument")
+        abtyap.textContent = ("the piano was my first real instrument. my family put me into lessons when i was like 3 or 4 (i lowkey dont remember 😭) and it was pretty alright! i like the piano but it started to feel like a chore instead of an instrument i actively enjoyed and wanted to pursue, and i stopped taking lessons for it in 2024. i still play the piano, but not as often as i once did, and i'm not quite as good as i was before. i used to play piano in SIDEQUEST OTTAWA (until i quit 💀) and now i mostly do it for fun. i might pick it up again and do my rcm exams tho bc it'll probably be useful!!!! \n \n tl;dr im glad i learned piano and its a pretty decent instrument")
         clicksound.cloneNode(true).play();
         showSide();
     }

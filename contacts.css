@@ -1,0 +1,98 @@
+body {
+    background-color: rgb(201, 61, 126);
+    color:white;
+    font-family:cursive;
+}
+#topbar {
+    border-bottom:4px solid white;
+    width:100vw;
+    height:50px;
+    background-color: rgb(197, 115, 186);
+    margin-left:-8px;
+    margin-top:-8px;
+    justify-content:center;
+    align-items:center;
+    display:flex;
+}
+.tbtxt {
+    border: 2px solid white;
+    padding:4px;
+    white-space:nowrap;
+    margin-left:3px;
+    margin-right:3px;
+    transition:transform ease-in 100ms;
+}
+.tbtxt:hover {
+    background-color:rgb(212, 79, 141);
+    transform:scale(1.1)
+}
+
+#titletext {
+    transition: transform ease 50ms;
+    border:4px solid rgb(255, 255, 255);
+    display:flex;
+    width:500px;
+    height:50px;
+    align-items:center;
+    border-radius:5px;
+    background-color:rgb(197, 115, 186);
+    font-size:40px;
+    font-weight:bold;
+    padding:10px;
+    justify-content:center;
+    justify-self:center;
+    margin-top:30px;
+}
+#slack {
+    filter:brightness(1.22);
+}
+#contactsbox {
+    display:block;
+    margin-top:30px;
+    justify-self:center;
+    justify-content:center;
+    border:4px solid white;
+    background-color:rgb(201, 201, 201);
+}
+.contactbox {
+    display:block;
+    padding:25px;
+    transition:transform ease 300ms;
+}
+#contactinterface {
+    display:flex;
+    justify-content:center;
+}
+.contactstextbox {
+    display:flex;
+    justify-self:center;
+    justify-content:center;
+    border:4px solid white;
+    background-color:rgb(182, 182, 182);
+    height:130px;
+    margin-top:15px;
+    width:500px;
+    margin-left:-4px;
+    align-items:center;
+    font-size:30px;
+    border-left:0px;
+}
+#slackcontact {
+    margin-top:45px;
+}
+.azzyimg {
+    border:4px solid white;
+    border-radius:300px;
+    margin-left:-193px;
+    margin-right:20px;
+}
+.contactbox:hover {
+    transform:scale(1.2)
+}
+a {
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:underline
+}
