@@ -26,6 +26,10 @@ body {
     background-color:rgb(212, 79, 141);
     transform:scale(1.1)
 }
+#doodlebcl {
+    position:absolute;
+    margin-left:20px;
+}
 @keyframes muswiggle {
     0% {transform:rotate(0deg);}
     25% {transform:rotate(5deg);}
@@ -186,6 +190,7 @@ body {
 #musicbasicbox {
     border:4px solid white;
     margin-top:40px;
+    position:relative;
     width:500px;
     justify-self:center;
     height:465px;

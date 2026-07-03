@@ -10,6 +10,7 @@ const bigbox = document.getElementById("musicbigbox")
 const abttsimg = document.getElementById("abttsimg")
 const ititbox = document.getElementById("ititbox")
 const abtyap = document.getElementById("abtyap")
+const doodlebcl = document.getElementById("doodlebcl")
 
 const flt = document.getElementById("flt")
 const bcl = document.getElementById("bcl")
@@ -243,7 +244,7 @@ cbc.addEventListener('mousedown', () => {
         cbc.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("images/cbc.png")
         ititbox.textContent = ("contrabass clarinet")
-        abtyap.textContent = ("woah, was that... foreshadowing???? earlier this year i found out my school has contra clarinets and my band director said i can play one next year! im super duper super duper super duper excited!!!! not really much to say yet since we dont get the contrabass back until may 😓")
+        abtyap.textContent = ("woah, was that... foreshadowing???? earlier this year i found out my school has contra clarinets and my band director said i can play one next year! im super duper super duper super duper excited!!!! not really much to say yet since the senior bass clarinet is borrowing it over the summer 😓")
         clicksound.cloneNode(true).play();
         showSide();
     }
@@ -282,7 +283,7 @@ cto.addEventListener('mousedown', () => {
         cto.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("images/cto.png")
         ititbox.textContent = ("contralto clarinet")
-        abtyap.textContent = ("same situation as contrabass clarinet!!! however, WE ACTUALLY HAVE IT RIGHT NOW!!!! SO I CAN PLAY IT!!!! it takes a LOT more air volume and air pressure than i expected which is kinda scary but oh well. its a really cool (and clunky 💔) instrument that will i enjoy playing, at least until the contrabass comes in!")
+        abtyap.textContent = ("my wonderful son. this is my BABY. i am so lucky our school has basically the best model of contralto out there!!! since i cant borrow the contrabass he let me try the contralto, and its been amazing!!! its so awesome to play low niche instruments #lowreedsupremacy")
         clicksound.cloneNode(true).play();
         showSide();
     }
@@ -336,3 +337,7 @@ function hideSide() {
     musicbigbox.style.left = ("0%")
     musicbigbox.style.transform = ("translateX(0px)")
 }
+document.addEventListener("DOMContentLoaded", () => {
+    let bclrotate = Math.random() * 50 - 25;
+    doodlebcl.style.transform = `rotate(${bclrotate}deg)`;
+})
