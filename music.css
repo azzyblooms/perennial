@@ -80,6 +80,32 @@ body {
         filter:hue-rotate(359deg)
     }
 }
+#brisketcounter {
+    padding:10px;
+    padding-right:13.5px;
+    position:fixed;
+    left:10%;
+    top:1%;
+    background-color:rgb(196, 100, 183);
+    color:white;
+    transform:translateY(-800px);
+    transition:transform ease-out 4s;
+    width:75px;
+    z-index: 10;
+    height:130px;
+    border:4px solid white;
+    border-radius:5px;
+    text-align:center;
+    justify-items:center;
+    justify-content: center;
+}
+#brisketcounter.showing {
+    transform:translateY(0px);
+}
+#brisketnumber {
+    font-size:60px;
+    margin-top:8px;
+}
 .tbgame {
     display:none;
 }

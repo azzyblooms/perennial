@@ -11,6 +11,9 @@ const brisketnumber = document.getElementById("brisketnumber")
 if(localStorage.getItem("briskets") === null) {
     localStorage.setItem("briskets", 0)
 }
+if(localStorage.getItem("perrenialbrisket") === null) {
+    localStorage.setItem("perrenialbrisket", 0)
+}
 
 const hoversound = new Audio('audio/hover.mp3')
 const clicksound = new Audio('audio/click2.mp3')
@@ -132,35 +135,66 @@ brisket.addEventListener('mouseleave', () => {
     brisket.textContent = "≽^-⩊-^≼";
 })
 brisket.addEventListener('mousedown', () => {
+    let perrenialbrisket = Number(localStorage.getItem("perrenialbrisket"))
     brisket.textContent = "≽^•⩊-^≼";
     mew.preservesPitch = false;
     mew.playbackRate = 1.2;
-    mew.play();
-    brisketIncrease();
+    if(perrenialbrisket == 1) {
+        clicksound.play();
+    } else {
+        mew.play();
+    }
     presentBriskets();
     brisket.classList.add("sustingus")
 })
 function brisketIncrease() {
+    let perrenialbrisket = Number(localStorage.getItem("perrenialbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
-    briskets++;
-    localStorage.setItem("briskets", briskets)
+    if(perrenialbrisket == 0) {
+        briskets++;
+        perrenialbrisket = 1;
+        localStorage.setItem("perrenialbrisket", 1)
+        localStorage.setItem("briskets", briskets)
+        brisketnumber.textContent = Number(localStorage.getItem("briskets"));
+    }
 }
 function presentBriskets() {
+    let perrenialbrisket = Number(localStorage.getItem("perrenialbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
     brisketcounter.style.transition = ("transform ease-out 4s")
     brisketcounter.classList.add("showing")
+    if(perrenialbrisket == 1) {
+        brisketnumber.textContent = Number(localStorage.getItem("briskets"))
+    }
     setTimeout(() => {
             catcollect.preservesPitch = false;
-            if(briskets > 1) {
+            if(perrenialbrisket == 0) {
+                if(briskets > 1) {
                 catcollect.playbackRate = (Math.sqrt(briskets) / 1.39)
             } else {
                 catcollect.playbackRate = 1;
             }
-            catcollect.play();
-            brisketnumber.textContent = briskets;
+                catcollect.play();
+                brisketIncrease();
+            }
+
+            brisketnumber.textContent = Number(localStorage.getItem("briskets"));
             setTimeout(() => {    
                 brisketcounter.style.transition = ("transform ease-in 4s")
                 brisketcounter.classList.remove("showing")
             }, 1000)
     }, 4500)
 }
+
+document.addEventListener('keydown', () => {
+    let perrenialbrisket = Number(localStorage.getItem("perrenialbrisket"))
+    let briskets = Number(localStorage.getItem("briskets"))
+    let musicbrisket = Number(localStorage.getItem("musicbrisket"))
+    musicbrisket = 0;
+    briskets = 0;
+    perrenialbrisket = 0;
+    localStorage.setItem("perrenialbrisket", 0)
+    localStorage.setItem("briskets", 0)
+    localStorage.setItem("musicbrisket", 0)
+    mew.play();
+})
