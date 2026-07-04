@@ -375,6 +375,7 @@ doodlecat.addEventListener('mouseleave', () => {
 })
 doodlecat.addEventListener('mousedown', () => {
     let musicbrisket = Number(localStorage.getItem("musicbrisket"))
+    let briskets = Number(localStorage.getItem("briskets"))
     doodlecat.textContent = "≽^•⩊-^≼";
     mew.preservesPitch = false;
     mew.playbackRate = 1.2;
@@ -385,6 +386,7 @@ doodlecat.addEventListener('mousedown', () => {
     }
     presentBriskets();
     doodlecat.classList.add("sustingus")
+    brisketnumber.textContent = Number(localStorage.getItem("briskets"));
 })
 function brisketIncrease() {
     let musicbrisket = Number(localStorage.getItem("musicbrisket"))
@@ -402,9 +404,6 @@ function presentBriskets() {
     let briskets = Number(localStorage.getItem("briskets"))
     brisketcounter.style.transition = ("transform ease-out 4s")
     brisketcounter.classList.add("showing")
-    if(musicbrisket == 1) {
-        brisketnumber.textContent = Number(localStorage.getItem("briskets"))
-    }
     setTimeout(() => {
             catcollect.preservesPitch = false;
             if(musicbrisket == 0) {
@@ -417,7 +416,6 @@ function presentBriskets() {
                 brisketIncrease();
             }
 
-            brisketnumber.textContent = Number(localStorage.getItem("briskets"));
             setTimeout(() => {    
                 brisketcounter.style.transition = ("transform ease-in 4s")
                 brisketcounter.classList.remove("showing")

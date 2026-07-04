@@ -136,6 +136,7 @@ brisket.addEventListener('mouseleave', () => {
 })
 brisket.addEventListener('mousedown', () => {
     let perrenialbrisket = Number(localStorage.getItem("perrenialbrisket"))
+    let briskets = Number(localStorage.getItem("briskets"))
     brisket.textContent = "≽^•⩊-^≼";
     mew.preservesPitch = false;
     mew.playbackRate = 1.2;
@@ -145,6 +146,7 @@ brisket.addEventListener('mousedown', () => {
         mew.play();
     }
     presentBriskets();
+    brisketnumber.textContent = Number(localStorage.getItem("briskets"));
     brisket.classList.add("sustingus")
 })
 function brisketIncrease() {
@@ -163,9 +165,7 @@ function presentBriskets() {
     let briskets = Number(localStorage.getItem("briskets"))
     brisketcounter.style.transition = ("transform ease-out 4s")
     brisketcounter.classList.add("showing")
-    if(perrenialbrisket == 1) {
-        brisketnumber.textContent = Number(localStorage.getItem("briskets"))
-    }
+
     setTimeout(() => {
             catcollect.preservesPitch = false;
             if(perrenialbrisket == 0) {
@@ -177,8 +177,6 @@ function presentBriskets() {
                 catcollect.play();
                 brisketIncrease();
             }
-
-            brisketnumber.textContent = Number(localStorage.getItem("briskets"));
             setTimeout(() => {    
                 brisketcounter.style.transition = ("transform ease-in 4s")
                 brisketcounter.classList.remove("showing")
