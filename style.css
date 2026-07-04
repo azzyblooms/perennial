@@ -415,6 +415,20 @@ a {
     font-size:30px;
     line-height:1;
 }
+@keyframes rainbowbutton {
+    from {
+        filter: hue-rotate(0deg)
+    } to {
+        filter:hue-rotate(359deg)
+    }
+}
+.tbgame {
+    display:none;
+}
+#tbgame {
+    background-color:rgb(197, 115, 186);
+    animation:rainbowbutton 1.5s linear infinite;
+}
 #musicbutton {
     background-image:url(images/trebleclef.webp);
     background-size:120px;
