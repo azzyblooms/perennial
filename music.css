@@ -63,15 +63,15 @@ body {
     display:none;
     transition:transform ease-out 1s, opacity ease 1s;
     justify-content: center;
-    text-align:center;
     justify-self: center;
-    align-self: center;
-    justify-items: center;
-    align-items:center;
+    user-select: none;
 }
 #doodlecat.sustingus {
     opacity:0;
     transform: rotate(-75deg) translate(-40px, -130px);
+}
+#doodlecat:hover {
+    cursor:pointer;
 }
 @keyframes rainbowbutton {
     from {

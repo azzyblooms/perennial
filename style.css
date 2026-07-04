@@ -415,6 +415,53 @@ a {
     font-size:30px;
     line-height:1;
 }
+#brisketwrapper {
+    display:flex;
+    justify-content: center;
+    justify-self:center;
+    margin-top:-90px;
+}
+#brisket {
+    margin-top:5px;
+    opacity:1;
+    rotate:0deg;
+    transition:transform ease-out 1s, opacity ease 1s;
+    justify-content: center;
+    justify-self: center;
+    user-select: none;
+}
+#brisket.sustingus {
+    opacity:0;
+    transform: rotate(-75deg) translate(-40px, -130px);
+}
+#brisket:hover {
+    cursor:pointer;
+}
+#brisketcounter {
+    padding:10px;
+    padding-right:13.5px;
+    position:fixed;
+    left:10%;
+    top:1%;
+    background-color:rgb(196, 100, 183);
+    color:white;
+    transform:translateY(-800px);
+    transition:transform ease-out 4s;
+    width:75px;
+    height:130px;
+    border:4px solid white;
+    border-radius:5px;
+    text-align:center;
+    justify-items:center;
+    justify-content: center;
+}
+#brisketcounter.showing {
+    transform:translateY(0px);
+}
+#brisketnumber {
+    font-size:60px;
+    margin-top:8px;
+}
 @keyframes rainbowbutton {
     from {
         filter: hue-rotate(0deg)

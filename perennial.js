@@ -5,9 +5,17 @@ const projectbutton = document.getElementById("projectbutton");
 const contactbutton = document.getElementById("contactbutton");
 const miscbutton = document.getElementById("miscbutton");
 const cooltext1 = document.getElementById("cooltext1");
+const brisket = document.getElementById("brisket");
+const brisketcounter = document.getElementById("brisketcounter")
+const brisketnumber = document.getElementById("brisketnumber")
+if(localStorage.getItem("briskets") === null) {
+    localStorage.setItem("briskets", 0)
+}
 
 const hoversound = new Audio('audio/hover.mp3')
 const clicksound = new Audio('audio/click2.mp3')
+const catcollect = new Audio ('audio/catcollect.wav')
+const mew = new Audio ('audio/mew.wav')
 
 const tbper = document.getElementById("tbper")
 const tbmus = document.getElementById("tbmus")
@@ -93,7 +101,10 @@ mebutton.addEventListener('mouseleave', () => {
     mebutton.classList.remove("mewiggle");
     cooltext1.textContent = ("------------------")
 })
-
+musicbutton.addEventListener('mousedown', () => {
+    clicksound.play();
+    window.location.href = ("music.html")
+})
 projectbutton.addEventListener('mousedown', () => {
     clicksound.play();
     window.location.href = ("wip.html")
@@ -114,3 +125,42 @@ mebutton.addEventListener('mousedown', () => {
     clicksound.play();
     window.location.href = ("wip.html")
 })
+brisket.addEventListener('mouseenter', () => {
+    brisket.textContent = "≽^•⩊•^≼";
+})
+brisket.addEventListener('mouseleave', () => {
+    brisket.textContent = "≽^-⩊-^≼";
+})
+brisket.addEventListener('mousedown', () => {
+    brisket.textContent = "≽^•⩊-^≼";
+    mew.preservesPitch = false;
+    mew.playbackRate = 1.2;
+    mew.play();
+    brisketIncrease();
+    presentBriskets();
+    brisket.classList.add("sustingus")
+})
+function brisketIncrease() {
+    let briskets = Number(localStorage.getItem("briskets"))
+    briskets++;
+    localStorage.setItem("briskets", briskets)
+}
+function presentBriskets() {
+    let briskets = Number(localStorage.getItem("briskets"))
+    brisketcounter.style.transition = ("transform ease-out 4s")
+    brisketcounter.classList.add("showing")
+    setTimeout(() => {
+            catcollect.preservesPitch = false;
+            if(briskets > 1) {
+                catcollect.playbackRate = (Math.sqrt(briskets) / 1.39)
+            } else {
+                catcollect.playbackRate = 1;
+            }
+            catcollect.play();
+            brisketnumber.textContent = briskets;
+            setTimeout(() => {    
+                brisketcounter.style.transition = ("transform ease-in 4s")
+                brisketcounter.classList.remove("showing")
+            }, 1000)
+    }, 4500)
+}
