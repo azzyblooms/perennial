@@ -60,7 +60,7 @@ tbabt.addEventListener('mousedown', () => {
     window.location.href = ("wip.html")
 })
 tbproj.addEventListener('mousedown', () => {
-    window.location.href = ("wip.html")
+    window.location.href = ("projects.html")
 })
 tbcon.addEventListener('mousedown', () => {
     window.location.href = ("contacts.html")
@@ -433,5 +433,6 @@ document.addEventListener('keydown', () => {
     localStorage.setItem("perrenialbrisket", 0)
     localStorage.setItem("briskets", 0)
     localStorage.setItem("musicbrisket", 0)
+    localStorage.setItem("contactbrisket", 0)
     mew.play();
 })
