@@ -145,17 +145,183 @@ a {
 .active {
     background-color:rgb(211, 59, 130);
 }
-#projbox1 {
+#brisketcounter {
     padding:10px;
+    padding-right:13.5px;
+    position:fixed;
+    left:10%;
+    top:1%;
+    background-color:rgb(196, 100, 183);
+    color:white;
+    transform:translateY(-800px);
+    transition:transform ease-out 4s;
+    width:75px;
+    height:130px;
+    z-index: 10;
+    border:4px solid white;
+    border-radius:5px;
+    text-align:center;
+    justify-items:center;
+    justify-content: center;
+}
+#brisketcounter.showing {
+    transform:translateY(0px);
+}
+#brisketnumber {
+    font-size:60px;
+    margin-top:8px;
+}
+#brisket {
+    position:absolute;
+    top:300px;
+    transition:transform ease-out 1s, opacity ease 1s;
+    left:-200px;
+    user-select: none;
+}
+#brisket.moving {
+    animation:movin 3s ease-in-out forwards;
+}
+#brisket.sustingus {
+    opacity:0;
+    transform: rotate(-75deg) translate(-40px, -130px);
+}
+@keyframes movin {
+    from {
+        left:-200px
+    }
+    to {
+        left:200px;
+    }
+}
+#projbox2 {
+    padding:10px;
+    background-color:rgb(197, 115, 186);
+    margin-top:40px;
     border: 4px solid white;
     border-radius:5px;
     display:flex;
+    position:relative;
+    width:600px;
     justify-self:center;
+    height:195px;
+    align-items:top;
     justify-content:center;
 }
-#pb1img {
+#pb2deets {
+    display:flex;
+    flex-direction: column;
+    align-items:top;
+    justify-content: center;
+}
+#pb2title {
+    display:inline-flex;
+    font-size:30px;
+    padding-left:40px;
+    align-self:top;
+    font-weight: bold;
+    text-align:center;
+    justify-content: center;
+}
+#pb2img:hover {
+    transform:scale(1.1);
+    cursor:pointer;
+}
+#pb2bottom {
+    display:flex;
+    margin-top:13px;
+}
+#pb2github {
+    align-self:center;
+    transition:transform ease 300ms;
+    margin-left:55px;
+    margin-right:35px;
+}
+#pb2github:hover {
+    transform:scale(1.1);
+    cursor:pointer;
+}
+#pb2img {
     width:200px;
+    justify-content: center;
+    align-self:center;
+    height:172.5px;
+    transition:transform ease 300ms;
+    margin-left:-35px;
     border:4px solid white;
     border-radius:5px;
     
+}
+#pb2graph {
+    align-items:center;
+    justify-content:center;
+    display:block;
+    width:300px;
+    margin-left:40px;
+    text-align:center;
+}
+#projbox1 {
+    padding:10px;
+    background-color:rgb(197, 115, 186);
+    margin-top:40px;
+    border: 4px solid white;
+    border-radius:5px;
+    display:flex;
+    position:relative;
+    width:600px;
+    justify-self:center;
+    height:195px;
+    align-items:top;
+    justify-content:center;
+}
+#pb1deets {
+    display:flex;
+    flex-direction: column;
+    align-items:top;
+    justify-content: center;
+}
+#pb1title {
+    display:inline-flex;
+    font-size:30px;
+    padding-left:40px;
+    align-self:top;
+    font-weight: bold;
+    text-align:center;
+    justify-content: center;
+}
+#pb1img:hover {
+    transform:scale(1.1);
+    cursor:pointer;
+}
+#pb1bottom {
+    display:flex;
+    margin-top:13px;
+}
+#pb1github {
+    align-self:center;
+    transition:transform ease 300ms;
+    margin-left:55px;
+    margin-right:35px;
+}
+#pb1github:hover {
+    transform:scale(1.1);
+    cursor:pointer;
+}
+#pb1img {
+    width:200px;
+    justify-content: center;
+    align-self:center;
+    height:172.5px;
+    transition:transform ease 300ms;
+    margin-left:-35px;
+    border:4px solid white;
+    border-radius:5px;
+    
+}
+#pb1graph {
+    align-items:center;
+    justify-content:center;
+    display:block;
+    width:300px;
+    margin-left:40px;
+    text-align:center;
 }
