@@ -9,6 +9,8 @@ const mailsound = new Audio ('audio/mail.wav')
 const catcollect = new Audio ('audio/catcollect.wav')
 const mew = new Audio ('audio/mew.wav')
 const whoop = new Audio ('audio/snd_slidewhist.wav')
+const show = new Audio ('audio/In.ogg')
+const hide = new Audio ('audio/Out.ogg')
 if(localStorage.getItem("briskets") === null) {
     localStorage.setItem("briskets", 0)
 }
@@ -148,6 +150,9 @@ brisket.addEventListener('mousedown', () => {
     presentBriskets();
     brisket.classList.add("sustingus")
     brisketnumber.textContent = Number(localStorage.getItem("briskets"));
+    setTimeout(() => {
+        show.play();
+    }, 2350)
 })
 function presentBriskets() {
     let contactbrisket = Number(localStorage.getItem("contactbrisket"))
@@ -169,6 +174,7 @@ function presentBriskets() {
             setTimeout(() => {    
                 brisketcounter.style.transition = ("transform ease-in 4s")
                 brisketcounter.classList.remove("showing")
+                hide.play();
             }, 1000)
     }, 4500)
 }

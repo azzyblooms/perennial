@@ -19,6 +19,8 @@ const hoversound = new Audio('audio/hover.mp3')
 const clicksound = new Audio('audio/click2.mp3')
 const catcollect = new Audio ('audio/catcollect.wav')
 const mew = new Audio ('audio/mew.wav')
+const show = new Audio ('audio/In.ogg')
+const hide = new Audio ('audio/Out.ogg')
 
 const tbper = document.getElementById("tbper")
 const tbmus = document.getElementById("tbmus")
@@ -148,6 +150,9 @@ brisket.addEventListener('mousedown', () => {
     presentBriskets();
     brisketnumber.textContent = Number(localStorage.getItem("briskets"));
     brisket.classList.add("sustingus")
+    setTimeout(() => {
+        show.play();
+    }, 2350)
 })
 function brisketIncrease() {
     let perrenialbrisket = Number(localStorage.getItem("perrenialbrisket"))
@@ -180,6 +185,7 @@ function presentBriskets() {
             setTimeout(() => {    
                 brisketcounter.style.transition = ("transform ease-in 4s")
                 brisketcounter.classList.remove("showing")
+                hide.play();
             }, 1000)
     }, 4500)
 }

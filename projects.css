@@ -171,15 +171,18 @@ a {
     font-size:60px;
     margin-top:8px;
 }
-#brisket {
+#briskethouse {
     position:absolute;
     top:300px;
-    transition:transform ease-out 1s, opacity ease 1s;
     left:-200px;
+    transition: left ease-in-out 3s;
+}
+#brisket {
+    transition:transform ease-out 1s, opacity ease 1s;
     user-select: none;
 }
-#brisket.moving {
-    animation:movin 3s ease-in-out forwards;
+#briskethouse.moving {
+    left:200px;
 }
 #brisket.sustingus {
     opacity:0;
@@ -193,13 +196,30 @@ a {
         left:200px;
     }
 }
+#majorproj {
+    background-color: rgb(175, 42, 104);
+    padding-bottom:30px;
+    padding-top:20px;
+    width:700px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self:center;
+    justify-content: center;
+    border: 4px solid white;
+    border-radius: 5px;
+    margin-top:40px;
+}
+#mprojtitle {
+    font-size:50px;
+}
 #projbox2 {
     padding:10px;
     background-color:rgb(197, 115, 186);
     margin-top:40px;
     border: 4px solid white;
     border-radius:5px;
-    display:flex;
+    display:none;
     position:relative;
     width:600px;
     justify-self:center;
@@ -265,7 +285,7 @@ a {
     margin-top:40px;
     border: 4px solid white;
     border-radius:5px;
-    display:flex;
+    display:none;
     position:relative;
     width:600px;
     justify-self:center;
@@ -318,6 +338,138 @@ a {
     
 }
 #pb1graph {
+    align-items:center;
+    justify-content:center;
+    display:block;
+    width:300px;
+    margin-left:40px;
+    text-align:center;
+}
+#projbox3 {
+    padding:10px;
+    background-color:rgb(197, 115, 186);
+    margin-top:40px;
+    border: 4px solid white;
+    border-radius:5px;
+    display:none;
+    position:relative;
+    width:600px;
+    justify-self:center;
+    height:195px;
+    align-items:top;
+    justify-content:center;
+}
+#pb3deets {
+    display:flex;
+    flex-direction: column;
+    align-items:top;
+    justify-content: center;
+}
+#pb3title {
+    display:inline-flex;
+    font-size:30px;
+    padding-left:40px;
+    align-self:top;
+    font-weight: bold;
+    text-align:center;
+    justify-content: center;
+}
+#pb3img:hover {
+    transform:scale(1.1);
+    cursor:pointer;
+}
+#pb3bottom {
+    display:flex;
+    margin-top:13px;
+}
+#pb3github {
+    align-self:center;
+    transition:transform ease 300ms;
+    margin-left:55px;
+    margin-right:35px;
+}
+#pb3github:hover {
+    transform:scale(1.1);
+    cursor:pointer;
+}
+#pb3img {
+    width:200px;
+    justify-content: center;
+    align-self:center;
+    height:172.5px;
+    transition:transform ease 300ms;
+    margin-left:-35px;
+    border:4px solid white;
+    border-radius:5px;
+    
+}
+#pb3graph {
+    align-items:center;
+    justify-content:center;
+    display:block;
+    width:300px;
+    margin-left:40px;
+    text-align:center;
+}
+#projbox4 {
+    padding:10px;
+    background-color:rgb(197, 115, 186);
+    margin-top:40px;
+    border: 4px solid white;
+    border-radius:5px;
+    display:none;
+    position:relative;
+    width:600px;
+    justify-self:center;
+    height:195px;
+    align-items:top;
+    justify-content:center;
+}
+#pb4deets {
+    display:flex;
+    flex-direction: column;
+    align-items:top;
+    justify-content: center;
+}
+#pb4title {
+    display:inline-flex;
+    font-size:30px;
+    padding-left:40px;
+    align-self:top;
+    font-weight: bold;
+    text-align:center;
+    justify-content: center;
+}
+#pb4img:hover {
+    transform:scale(1.1);
+    cursor:pointer;
+}
+#pb4bottom {
+    display:flex;
+    margin-top:13px;
+}
+#pb4github {
+    align-self:center;
+    transition:transform ease 300ms;
+    margin-left:55px;
+    margin-right:35px;
+}
+#pb4github:hover {
+    transform:scale(1.1);
+    cursor:pointer;
+}
+#pb4img {
+    width:200px;
+    justify-content: center;
+    align-self:center;
+    height:172.5px;
+    transition:transform ease 300ms;
+    margin-left:-35px;
+    border:4px solid white;
+    border-radius:5px;
+    
+}
+#pb4graph {
     align-items:center;
     justify-content:center;
     display:block;

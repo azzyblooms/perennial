@@ -3,6 +3,9 @@ const hoversound = new Audio('audio/hover.mp3')
 const clicksound = new Audio('audio/click2.mp3')
 const catcollect = new Audio ('audio/catcollect.wav')
 const mew = new Audio ('audio/mew.wav')
+const show = new Audio ('audio/In.ogg')
+const hide = new Audio ('audio/Out.ogg')
+const boom = new Audio ('audio/boom.mp3')
 if(localStorage.getItem("briskets") === null) {
     localStorage.setItem("briskets", 0)
 }
@@ -18,10 +21,80 @@ const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
 const tbmisc = document.getElementById("tbmisc")
 const brisket = document.getElementById("brisket")
+const briskethouse = document.getElementById("briskethouse")
 const pb1github = document.getElementById("pb1github")
 const pb1image = document.getElementById("pb1img")
 const pb2github = document.getElementById("pb2github")
 const pb2image = document.getElementById("pb2img")
+const pb3github = document.getElementById("pb3github")
+const pb3image = document.getElementById("pb3img")
+const pb4github = document.getElementById("pb4github")
+const pb4image = document.getElementById("pb4img")
+const b1 = document.getElementById("projbox1")
+const b2 = document.getElementById("projbox2")
+const b3 = document.getElementById("projbox3")
+const b4 = document.getElementById("projbox4")
+const majorbox = document.getElementById("majorproj")
+let open = false;
+let overbox = false;
+
+b1.addEventListener('mouseenter', () => {
+    overbox = true;
+})
+b1.addEventListener('mouseleave', () => {
+    overbox = false;
+})
+b2.addEventListener('mouseenter', () => {
+    overbox = true;
+})
+b2.addEventListener('mouseleave', () => {
+    overbox = false;
+})
+b3.addEventListener('mouseenter', () => {
+    overbox = true;
+})
+b3.addEventListener('mouseleave', () => {
+    overbox = false;
+})
+b4.addEventListener('mouseenter', () => {
+    overbox = true;
+})
+b4.addEventListener('mouseleave', () => {
+    overbox = false;
+})
+
+
+
+majorbox.addEventListener('mouseenter', () => {
+    if(!open) {
+        majorbox.style.backgroundColor = ("rgb(160, 40, 96)")
+        hoversound.cloneNode(true).play();
+    }
+})
+majorbox.addEventListener('mouseleave', () => {
+    majorbox.style.backgroundColor = ("rgb(175, 42, 104)")
+})
+majorbox.addEventListener('mousedown', () => {
+    if(!overbox) {
+        open = !open;
+        if(open) {
+            boom.cloneNode(true).play();
+            majorbox.style.paddingBottom = ("40px")
+            b1.style.display = ("flex")
+            b2.style.display = ("flex")
+            b3.style.display = ("flex")
+            b4.style.display = ("flex")
+        } else {
+            clicksound.cloneNode(true).play();
+            majorbox.style.paddingBottom = ("30px")
+            b1.style.display = ("none")
+            b2.style.display = ("none")
+            b3.style.display = ("none")
+            b4.style.display = ("none")
+        }
+    }
+})
+
 
 tbper.addEventListener('mousedown', () => {
     window.location.href = ("index.html")
@@ -45,6 +118,11 @@ tbmisc.addEventListener('mousedown', () => {
     window.location.href = ("wip.html")
 })
 
+
+
+
+
+
 pb1github.addEventListener('mousedown', () => {
     window.open("https://github.com/azzyblooms/catronome", "_blank")
     clicksound.play();
@@ -58,7 +136,10 @@ pb1image.addEventListener('mousedown', () => {
 })
 pb1image.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();
-    brisket.classList.add("moving")
+    briskethouse.classList.add("moving")
+})
+pb1image.addEventListener('mouseleave', () => {
+    briskethouse.classList.remove("moving")
 })
 
 pb2github.addEventListener('mousedown', () => {
@@ -76,6 +157,35 @@ pb2image.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();
 })
 
+pb3github.addEventListener('mousedown', () => {
+    window.open("https://github.com/azzyblooms/brass.js", "_blank")
+    clicksound.play();
+})
+pb3github.addEventListener('mouseenter', () => {
+    hoversound.cloneNode(true).play();
+})
+pb3image.addEventListener('mousedown', () => {
+    window.open("https://azzyblooms.github.io/brass.js", "_blank")
+    clicksound.play();
+})
+pb3image.addEventListener('mouseenter', () => {
+    hoversound.cloneNode(true).play();
+})
+
+pb4github.addEventListener('mousedown', () => {
+    window.open("https://github.com/azzyblooms/clikmin", "_blank")
+    clicksound.play();
+})
+pb4github.addEventListener('mouseenter', () => {
+    hoversound.cloneNode(true).play();
+})
+pb4image.addEventListener('mousedown', () => {
+    window.open("https://azzyblooms.github.io/clikmin", "_blank")
+    clicksound.play();
+})
+pb4image.addEventListener('mouseenter', () => {
+    hoversound.cloneNode(true).play();
+})
 
 
 
@@ -89,6 +199,8 @@ brisket.addEventListener('mousedown', () => {
     let projectbrisket = Number(localStorage.getItem("projectbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
     brisket.textContent = "≽^•⩊-^≼";
+    brisket.offsetWidth;
+    briskethouse.classList.remove("moving")
     mew.preservesPitch = false;
     mew.playbackRate = 1.2;
     if(projectbrisket == 1) {
@@ -99,6 +211,9 @@ brisket.addEventListener('mousedown', () => {
     presentBriskets();
     brisketnumber.textContent = Number(localStorage.getItem("briskets"));
     brisket.classList.add("sustingus")
+    setTimeout(() => {
+        show.play();
+    }, 2350)
 })
 function brisketIncrease() {
     let projectbrisket = Number(localStorage.getItem("projectbrisket"))
@@ -131,6 +246,7 @@ function presentBriskets() {
             setTimeout(() => {    
                 brisketcounter.style.transition = ("transform ease-in 4s")
                 brisketcounter.classList.remove("showing")
+                hide.play();
             }, 1000)
     }, 4500)
 }

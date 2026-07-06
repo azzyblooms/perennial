@@ -5,6 +5,9 @@ const clicksound = new Audio('audio/click2.mp3')
 const boom = new Audio ('audio/boom.mp3')
 const catcollect = new Audio ('audio/catcollect.wav')
 const mew = new Audio ('audio/mew.wav')
+const show = new Audio ('audio/In.ogg')
+const hide = new Audio ('audio/Out.ogg')
+
 const ihover = document.getElementById("ihover")
 const sidebox = document.getElementById("sidebox")
 const closeside = document.getElementById("closeside")
@@ -387,6 +390,9 @@ doodlecat.addEventListener('mousedown', () => {
     presentBriskets();
     doodlecat.classList.add("sustingus")
     brisketnumber.textContent = Number(localStorage.getItem("briskets"));
+    setTimeout(() => {
+        show.play();
+    }, 2350)
 })
 function brisketIncrease() {
     let musicbrisket = Number(localStorage.getItem("musicbrisket"))
@@ -419,6 +425,7 @@ function presentBriskets() {
             setTimeout(() => {    
                 brisketcounter.style.transition = ("transform ease-in 4s")
                 brisketcounter.classList.remove("showing")
+                hide.play();
             }, 1000)
     }, 4500)
 }
