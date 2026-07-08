@@ -5,6 +5,7 @@ const catcollect = new Audio ('audio/catcollect.wav')
 const mew = new Audio ('audio/deepmew.wav')
 const whoop = new Audio ('audio/snd_slidewhist.wav')
 const show = new Audio ('audio/In.ogg')
+const fall = new Audio ('audio/fall.wav')
 const boom = new Audio ('audio/boom.mp3')
 const hide = new Audio ('audio/Out.ogg')
 if(localStorage.getItem("briskets") === null) {
@@ -13,7 +14,7 @@ if(localStorage.getItem("briskets") === null) {
 if(localStorage.getItem("inceptionbrisket") === null) {
     localStorage.setItem("inceptionbrisket", 0)
 }
-
+const tb = document.getElementById("topbar")
 const tbper = document.getElementById("tbper")
 const tbmus = document.getElementById("tbmus")
 const tblik = document.getElementById("tblik")
@@ -56,20 +57,30 @@ brisket.addEventListener('mouseleave', () => {
 brisket.addEventListener('mousedown', () => {
     let inceptionbrisket = Number(localStorage.getItem("inceptionbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
-    brisket.textContent = "≽^•⩊-^≼";
+    brisket.textContent = "≽^@w@^≼";
     brisket.offsetWidth;
-    if(inceptionbrisket == 1) {
-        clicksound.play();
-    } else {
-        mew.play();
-    }
-    boom.cloneNode(true).play();
+    fall.play();
+    clicksound.play();
     presentBriskets();
     brisketnumber.textContent = Number(localStorage.getItem("briskets"));
     brisket.classList.add("sustingus")
     setTimeout(() => {
         show.play();
-    }, 2350)
+    }, 5200)
+    setTimeout(() => {
+        document.body.classList.add("shaking")
+        tbper.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg) translateY(${Math.random() * 15}px)`;
+        tbmus.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg) translateY(${Math.random() * 15}px)`;
+        tblik.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg) translateY(${Math.random() * 15}px)`;
+        tbabt.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg) translateY(${Math.random() * 15}px)`;
+        tbproj.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg) translateY(${Math.random() * 15})`;
+        tbcon.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg) translateY(${Math.random() * 15}px)`;
+        tbmisc.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg) translateY(${Math.random() * 15}spx)`;
+        tb.classList.add("tbb")
+        setTimeout(() => {
+            document.body.classList.remove("shaking")
+        }, 900)
+    }, 4984)
 })
 function brisketIncrease() {
     let inceptionbrisket = Number(localStorage.getItem("inceptionbrisket"))
@@ -85,7 +96,7 @@ function brisketIncrease() {
 function presentBriskets() {
     let inceptionbrisket = Number(localStorage.getItem("inceptionbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
-    brisketcounter.style.transition = ("transform ease-out 4s")
+    brisketcounter.style.transition = ("transform ease-out 8s")
     brisketcounter.classList.add("showing")
 
     setTimeout(() => {
@@ -100,11 +111,11 @@ function presentBriskets() {
                 brisketIncrease();
             }
             setTimeout(() => {    
-                brisketcounter.style.transition = ("transform ease-in 4s")
+                brisketcounter.style.transition = ("transform ease-in 8s")
                 brisketcounter.classList.remove("showing")
                 hide.play();
             }, 1000)
-    }, 4500)
+    }, 8584)
 }
 
 document.addEventListener('keydown', () => {
