@@ -30,13 +30,25 @@ const pb3github = document.getElementById("pb3github")
 const pb3image = document.getElementById("pb3img")
 const pb4github = document.getElementById("pb4github")
 const pb4image = document.getElementById("pb4img")
+const pb5github = document.getElementById("pb5github")
+const pb5image = document.getElementById("pb5img")
+const mb1github = document.getElementById("mb1github")
+const mb1image = document.getElementById("mb1img")
+const mb2github = document.getElementById("mb2github")
+const mb2image = document.getElementById("mb2img")
 const b1 = document.getElementById("projbox1")
 const b2 = document.getElementById("projbox2")
 const b3 = document.getElementById("projbox3")
 const b4 = document.getElementById("projbox4")
+const b5 = document.getElementById("projbox5")
+const mb1 = document.getElementById("mb1")
+const mb2 = document.getElementById("mb2")
 const majorbox = document.getElementById("majorproj")
+const minorbox = document.getElementById("minorproj")
 let open = false;
+let mopen = false;
 let overbox = false;
+let moverbox = false;
 
 b1.addEventListener('mouseenter', () => {
     overbox = true;
@@ -62,6 +74,25 @@ b4.addEventListener('mouseenter', () => {
 b4.addEventListener('mouseleave', () => {
     overbox = false;
 })
+b5.addEventListener('mouseenter', () => {
+    overbox = true;
+})
+b5.addEventListener('mouseleave', () => {
+    overbox = false;
+})
+
+mb1.addEventListener('mouseenter', () => {
+    moverbox = true;
+})
+mb1.addEventListener('mouseleave', () => {
+    moverbox = false;
+})
+mb2.addEventListener('mouseenter', () => {
+    moverbox = true;
+})
+mb2.addEventListener('mouseleave', () => {
+    moverbox = false;
+})
 
 
 
@@ -84,6 +115,7 @@ majorbox.addEventListener('mousedown', () => {
             b2.style.display = ("flex")
             b3.style.display = ("flex")
             b4.style.display = ("flex")
+            b5.style.display = ("flex")
         } else {
             clicksound.cloneNode(true).play();
             majorbox.style.paddingBottom = ("30px")
@@ -91,6 +123,33 @@ majorbox.addEventListener('mousedown', () => {
             b2.style.display = ("none")
             b3.style.display = ("none")
             b4.style.display = ("none")
+            b5.style.display = ("none")
+        }
+    }
+})
+
+minorbox.addEventListener('mouseenter', () => {
+    if(!mopen) {
+        minorbox.style.backgroundColor = ("rgb(160, 40, 96)")
+        hoversound.cloneNode(true).play();
+    }
+})
+minorbox.addEventListener('mouseleave', () => {
+    minorbox.style.backgroundColor = ("rgb(175, 42, 104)")
+})
+minorbox.addEventListener('mousedown', () => {
+    if(!moverbox) {
+        mopen = !mopen;
+        if(mopen) {
+            boom.cloneNode(true).play();
+            minorbox.style.paddingBottom = ("30px")
+            mb1.style.display = ("flex")
+            mb2.style.display = ("flex")
+        } else {
+            clicksound.cloneNode(true).play();
+            minorbox.style.paddingBottom = ("20px")
+            mb1.style.display = ("none")
+            mb2.style.display = ("none")
         }
     }
 })
@@ -184,6 +243,49 @@ pb4image.addEventListener('mousedown', () => {
     clicksound.play();
 })
 pb4image.addEventListener('mouseenter', () => {
+    hoversound.cloneNode(true).play();
+})
+pb5github.addEventListener('mousedown', () => {
+    window.open("https://github.com/azzyblooms/perennial", "_blank")
+    clicksound.play();
+})
+pb5github.addEventListener('mouseenter', () => {
+    hoversound.cloneNode(true).play();
+})
+pb5image.addEventListener('mousedown', () => {
+    window.location.href = 'inception.html'
+    clicksound.play();
+})
+pb5image.addEventListener('mouseenter', () => {
+    hoversound.cloneNode(true).play();
+})
+
+mb1github.addEventListener('mousedown', () => {
+    window.open("https://github.com/azzyblooms/trumpet-practice", "_blank")
+    clicksound.play();
+})
+mb1github.addEventListener('mouseenter', () => {
+    hoversound.cloneNode(true).play();
+})
+mb1image.addEventListener('mousedown', () => {
+    window.open("https://azzyblooms.itch.io/trumpet", "_blank")
+    clicksound.play();
+})
+mb1image.addEventListener('mouseenter', () => {
+    hoversound.cloneNode(true).play();
+})
+mb2github.addEventListener('mousedown', () => {
+    window.open("https://github.com/azzyblooms/blossom", "_blank")
+    clicksound.play();
+})
+mb2github.addEventListener('mouseenter', () => {
+    hoversound.cloneNode(true).play();
+})
+mb2image.addEventListener('mousedown', () => {
+    window.open("https://azzyblooms.github.io/blossom", "_blank")
+    clicksound.play();
+})
+mb2image.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();
 })
 
