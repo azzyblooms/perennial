@@ -1,13 +1,13 @@
 
-const hoversound = new Audio('audio/hover.mp3')
-const clicksound = new Audio('audio/click2.mp3')
-const catcollect = new Audio ('audio/catcollect.wav')
-const mew = new Audio ('audio/deepmew.wav')
-const whoop = new Audio ('audio/snd_slidewhist.wav')
-const show = new Audio ('audio/In.ogg')
-const fall = new Audio ('audio/fall.wav')
-const boom = new Audio ('audio/boom.mp3')
-const hide = new Audio ('audio/Out.ogg')
+const hoversound = new Audio('/audio/hover.mp3')
+const clicksound = new Audio('/audio/click2.mp3')
+const catcollect = new Audio ('/audio/catcollect.wav')
+const mew = new Audio ('/audio/deepmew.wav')
+const whoop = new Audio ('/audio/snd_slidewhist.wav')
+const show = new Audio ('/audio/In.ogg')
+const fall = new Audio ('/audio/fall.wav')
+const boom = new Audio ('/audio/boom.mp3')
+const hide = new Audio ('/audio/Out.ogg')
 if(localStorage.getItem("briskets") === null) {
     localStorage.setItem("briskets", 0)
 }
@@ -27,25 +27,25 @@ const briskethouse = document.getElementById("briskethouse")
 
 
 tbper.addEventListener('mousedown', () => {
-    window.location.href = ("index.html")
+    window.location.href = "/";
 })
 tbmus.addEventListener('mousedown', () => {
-    window.location.href = ("music.html")
+    window.location.href = ("/music/")
 })
 tblik.addEventListener('mousedown', () => {
-    window.location.href = ("wip.html")
+    window.location.href = ("/likes/")
 })
 tbabt.addEventListener('mousedown', () => {
-    window.location.href = ("wip.html")
+    window.location.href = ("/about/")
 })
 tbproj.addEventListener('mousedown', () => {
-    window.location.href = ("projects.html")
+    window.location.href = ("/projects/")
 })
 tbcon.addEventListener('mousedown', () => {
-    window.location.href = ("contacts.html")
+    window.location.href = ("/contacts/")
 })
 tbmisc.addEventListener('mousedown', () => {
-    window.location.href = ("wip.html")
+    window.location.href = ("/misc/")
 })
 
 brisket.addEventListener('mouseenter', () => {

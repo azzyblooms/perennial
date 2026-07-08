@@ -15,12 +15,12 @@ if(localStorage.getItem("perrenialbrisket") === null) {
     localStorage.setItem("perrenialbrisket", 0)
 }
 
-const hoversound = new Audio('audio/hover.mp3')
-const clicksound = new Audio('audio/click2.mp3')
-const catcollect = new Audio ('audio/catcollect.wav')
-const mew = new Audio ('audio/mew.wav')
-const show = new Audio ('audio/In.ogg')
-const hide = new Audio ('audio/Out.ogg')
+const hoversound = new Audio('/audio/hover.mp3')
+const clicksound = new Audio('/audio/click2.mp3')
+const catcollect = new Audio ('/audio/catcollect.wav')
+const mew = new Audio ('/audio/mew.wav')
+const show = new Audio ('/audio/In.ogg')
+const hide = new Audio ('/audio/Out.ogg')
 
 const tbper = document.getElementById("tbper")
 const tbmus = document.getElementById("tbmus")
@@ -31,25 +31,25 @@ const tbcon = document.getElementById("tbcon")
 const tbmisc = document.getElementById("tbmisc")
 
 tbper.addEventListener('mousedown', () => {
-    window.location.href = ("index.html")
+    window.location.href = "/";
 })
 tbmus.addEventListener('mousedown', () => {
-    window.location.href = ("music.html")
+    window.location.href = ("/music/")
 })
 tblik.addEventListener('mousedown', () => {
-    window.location.href = ("wip.html")
+    window.location.href = ("/likes/")
 })
 tbabt.addEventListener('mousedown', () => {
-    window.location.href = ("wip.html")
+    window.location.href = ("/about/")
 })
 tbproj.addEventListener('mousedown', () => {
-    window.location.href = ("projects.html")
+    window.location.href = ("/projects/")
 })
 tbcon.addEventListener('mousedown', () => {
-    window.location.href = ("contacts.html")
+    window.location.href = ("/contacts/")
 })
 tbmisc.addEventListener('mousedown', () => {
-    window.location.href = ("wip.html")
+    window.location.href = ("/misc/")
 })
 
 musicbutton.addEventListener('mouseenter', () => {
@@ -124,7 +124,7 @@ contactbutton.addEventListener('mousedown', () => {
 })
 likebutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("wip.html")
+    window.location.href = ("likes.html")
 })
 mebutton.addEventListener('mousedown', () => {
     clicksound.play();

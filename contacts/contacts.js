@@ -1,16 +1,16 @@
 
-const hoversound = new Audio('audio/hover.mp3')
-const clicksound = new Audio('audio/click2.mp3')
-const discordsound = new Audio('audio/discord.wav')
-const slacksound = new Audio('audio/slack.wav')
-const instasound = new Audio ('audio/insta.wav')
-const ytsound = new Audio ('audio/likebell.wav')
-const mailsound = new Audio ('audio/mail.wav')
-const catcollect = new Audio ('audio/catcollect.wav')
-const mew = new Audio ('audio/mew.wav')
-const whoop = new Audio ('audio/snd_slidewhist.wav')
-const show = new Audio ('audio/In.ogg')
-const hide = new Audio ('audio/Out.ogg')
+const hoversound = new Audio('/audio/hover.mp3')
+const clicksound = new Audio('/audio/click2.mp3')
+const discordsound = new Audio('/audio/discord.wav')
+const slacksound = new Audio('/audio/slack.wav')
+const instasound = new Audio ('/audio/insta.wav')
+const ytsound = new Audio ('/audio/likebell.wav')
+const mailsound = new Audio ('/audio/mail.wav')
+const catcollect = new Audio ('/audio/catcollect.wav')
+const mew = new Audio ('/audio/mew.wav')
+const whoop = new Audio ('/audio/snd_slidewhist.wav')
+const show = new Audio ('/audio/In.ogg')
+const hide = new Audio ('/audio/Out.ogg')
 if(localStorage.getItem("briskets") === null) {
     localStorage.setItem("briskets", 0)
 }
@@ -94,25 +94,25 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 tbper.addEventListener('mousedown', () => {
-    window.location.href = ("index.html")
+    window.location.href = "/";
 })
 tbmus.addEventListener('mousedown', () => {
-    window.location.href = ("music.html")
+    window.location.href = ("/music/")
 })
 tblik.addEventListener('mousedown', () => {
-    window.location.href = ("wip.html")
+    window.location.href = ("/likes/")
 })
 tbabt.addEventListener('mousedown', () => {
-    window.location.href = ("wip.html")
+    window.location.href = ("/about/")
 })
 tbproj.addEventListener('mousedown', () => {
-    window.location.href = ("projects.html")
+    window.location.href = ("/projects/")
 })
 tbcon.addEventListener('mousedown', () => {
-    window.location.href = ("contacts.html")
+    window.location.href = ("/contacts/")
 })
 tbmisc.addEventListener('mousedown', () => {
-    window.location.href = ("wip.html")
+    window.location.href = ("/misc/")
 })
 
 act.addEventListener('mouseenter', () => {
