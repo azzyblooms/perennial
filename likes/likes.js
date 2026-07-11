@@ -6,10 +6,11 @@ const mew = new Audio ('/audio/mew.wav')
 const whoop = new Audio ('/audio/snd_slidewhist.wav')
 const show = new Audio ('/audio/In.ogg')
 const hide = new Audio ('/audio/Out.ogg')
+
 if(localStorage.getItem("briskets") === null) {
     localStorage.setItem("briskets", 0)
 }
-if(localStorage.getItem("contactbrisket") === null) {
+if(localStorage.getItem("likesbrisket") === null) {
     localStorage.setItem("likesbrisket", 0)
 }
 
@@ -20,7 +21,8 @@ const tbabt = document.getElementById("tbabt")
 const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
 const tbmisc = document.getElementById("tbmisc")
-//const brisket = document.getElementById("brisket")
+const briskettext = document.getElementById("briskettext")
+const brisket = document.getElementById("brisket")
 
 tbper.addEventListener('mousedown', () => {
     window.location.href = "/";
@@ -44,20 +46,24 @@ tbmisc.addEventListener('mousedown', () => {
     window.location.href = ("/misc/")
 })
 
-
-/*brisket.addEventListener('mouseenter', () => {
-    brisket.textContent = ("≽^•⩊•^≼")
-})
-brisket.addEventListener('mouseleave', () => {
-    brisket.textContent = ("≽^-⩊-^≼")
+briskettext.addEventListener('mousedown', () => {
+    if(brisket.style.display !== ("flex")) {
+        whoop.play();
+        brisket.classList.add("moving")
+    }
+    brisket.style.display = ("flex");
+    
 })
 brisket.addEventListener('mousedown', () => {
-    let contactbrisket = Number(localStorage.getItem("contactbrisket"))
+    let likesbrisket = Number(localStorage.getItem("likesbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
     brisket.textContent = "≽^•⩊-^≼";
+    const mouseX = event.clientX;
+    brisket.style.left = `${mouseX}px`;
     mew.preservesPitch = false;
     mew.playbackRate = 1.2;
-    if(contactbrisket == 1) {
+    brisket.classList.remove("moving")
+    if(likesbrisket == 1) {
         clicksound.play();
     } else {
         mew.play();
@@ -70,13 +76,13 @@ brisket.addEventListener('mousedown', () => {
     }, 2350)
 })
 function presentBriskets() {
-    let contactbrisket = Number(localStorage.getItem("contactbrisket"))
+    let likesbrisket = Number(localStorage.getItem("likesbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
     brisketcounter.style.transition = ("transform ease-out 4s")
     brisketcounter.classList.add("showing")
     setTimeout(() => {
             catcollect.preservesPitch = false;
-            if(contactbrisket == 0) {
+            if(likesbrisket == 0) {
                 if(briskets > 1) {
                 catcollect.playbackRate = (Math.sqrt(briskets) / 1.39)
             } else {
@@ -94,12 +100,12 @@ function presentBriskets() {
     }, 4500)
 }
 function brisketIncrease() {
-    let contactbrisket = Number(localStorage.getItem("contactbrisket"))
+    let likesbrisket = Number(localStorage.getItem("likesbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
-    if(contactbrisket == 0) {
+    if(likesbrisket == 0) {
         briskets++;
-        contactbrisket = 1;
-        localStorage.setItem("contactbrisket", 1)
+        likesbrisket = 1;
+        localStorage.setItem("likesbrisket", 1)
         localStorage.setItem("briskets", briskets)
         brisketnumber.textContent = Number(localStorage.getItem("briskets"));
     }
@@ -107,13 +113,24 @@ function brisketIncrease() {
 document.addEventListener('keydown', () => {
     let perrenialbrisket = Number(localStorage.getItem("perrenialbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
+    let contactbrisket = Number(localStorage.getItem("contactbrisket"))
+    let likesbrisket = Number(localStorage.getItem("likesbrisket"))
+    let inceptionbrisket = Number(localStorage.getItem("inceptionbrisket"))
+    let projectbrisket = Number(localStorage.getItem("projectbrisket"))
     let musicbrisket = Number(localStorage.getItem("musicbrisket"))
     musicbrisket = 0;
+    projectbrisket = 0;
+    inceptionbrisket = 0;
+    likesbrisket = 0;
+    contactbrisket = 0;
     briskets = 0;
     perrenialbrisket = 0;
     localStorage.setItem("perrenialbrisket", 0)
+    localStorage.setItem("contactbrisket", 0)
+    localStorage.setItem("inceptionbrisket", 0)
+    localStorage.setItem("likesbrisket", 0)
     localStorage.setItem("briskets", 0)
     localStorage.setItem("musicbrisket", 0)
-    localStorage.setItem("contactbrisket", 0)
+    localStorage.setItem("likesbrisket", 0)
     mew.play();
-})*/
+})

@@ -108,27 +108,27 @@ mebutton.addEventListener('mouseleave', () => {
 })
 musicbutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("music.html")
+    window.location.href = ("/music")
 })
 projectbutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("projects.html")
+    window.location.href = ("/projects")
 })
 miscbutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("wip.html")
+    window.location.href = ("/wip")
 })
 contactbutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("contacts.html")
+    window.location.href = ("/contacts")
 })
 likebutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("likes.html")
+    window.location.href = ("/likes")
 })
 mebutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("wip.html")
+    window.location.href = ("/wip")
 })
 brisket.addEventListener('mouseenter', () => {
     brisket.textContent = "≽^•⩊•^≼";
@@ -193,13 +193,24 @@ function presentBriskets() {
 document.addEventListener('keydown', () => {
     let perrenialbrisket = Number(localStorage.getItem("perrenialbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
+    let contactbrisket = Number(localStorage.getItem("contactbrisket"))
+    let likesbrisket = Number(localStorage.getItem("likesbrisket"))
+    let inceptionbrisket = Number(localStorage.getItem("inceptionbrisket"))
+    let projectbrisket = Number(localStorage.getItem("projectbrisket"))
     let musicbrisket = Number(localStorage.getItem("musicbrisket"))
     musicbrisket = 0;
+    projectbrisket = 0;
+    inceptionbrisket = 0;
+    likesbrisket = 0;
+    contactbrisket = 0;
     briskets = 0;
     perrenialbrisket = 0;
     localStorage.setItem("perrenialbrisket", 0)
+    localStorage.setItem("contactbrisket", 0)
+    localStorage.setItem("inceptionbrisket", 0)
+    localStorage.setItem("likesbrisket", 0)
     localStorage.setItem("briskets", 0)
     localStorage.setItem("musicbrisket", 0)
-    localStorage.setItem("contactbrisket", 0)
+    localStorage.setItem("likesbrisket", 0)
     mew.play();
 })

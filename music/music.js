@@ -25,7 +25,7 @@ if(localStorage.getItem("briskets") === null) {
 if(localStorage.getItem("musicbrisket") === null) {
     localStorage.setItem("musicbrisket", 0)
 }
-
+const musicboxes = document.getElementById("musboxes")
 const flt = document.getElementById("flt")
 const bcl = document.getElementById("bcl")
 const tpt = document.getElementById("tpt")
@@ -77,6 +77,7 @@ yapincoming.addEventListener('mouseenter', () => {
 })
 yapincoming.addEventListener('mousedown', () => {
     boom.play();
+    musicboxes.style.boxShadow = ("5px 5px 10px 2px rgba(0,0,0,0.3);")
     musicbigbox.style.display = ("block");
 })
 
@@ -433,13 +434,24 @@ function presentBriskets() {
 document.addEventListener('keydown', () => {
     let perrenialbrisket = Number(localStorage.getItem("perrenialbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
+    let contactbrisket = Number(localStorage.getItem("contactbrisket"))
+    let likesbrisket = Number(localStorage.getItem("likesbrisket"))
+    let inceptionbrisket = Number(localStorage.getItem("inceptionbrisket"))
+    let projectbrisket = Number(localStorage.getItem("projectbrisket"))
     let musicbrisket = Number(localStorage.getItem("musicbrisket"))
     musicbrisket = 0;
+    projectbrisket = 0;
+    inceptionbrisket = 0;
+    likesbrisket = 0;
+    contactbrisket = 0;
     briskets = 0;
     perrenialbrisket = 0;
     localStorage.setItem("perrenialbrisket", 0)
+    localStorage.setItem("contactbrisket", 0)
+    localStorage.setItem("inceptionbrisket", 0)
+    localStorage.setItem("likesbrisket", 0)
     localStorage.setItem("briskets", 0)
     localStorage.setItem("musicbrisket", 0)
-    localStorage.setItem("contactbrisket", 0)
+    localStorage.setItem("likesbrisket", 0)
     mew.play();
 })

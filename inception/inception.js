@@ -121,21 +121,24 @@ function presentBriskets() {
 document.addEventListener('keydown', () => {
     let perrenialbrisket = Number(localStorage.getItem("perrenialbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
-    let musicbrisket = Number(localStorage.getItem("musicbrisket"))
     let contactbrisket = Number(localStorage.getItem("contactbrisket"))
-    let projectbrisket = Number(localStorage.getItem("projectbrisket"))
+    let likesbrisket = Number(localStorage.getItem("likesbrisket"))
     let inceptionbrisket = Number(localStorage.getItem("inceptionbrisket"))
+    let projectbrisket = Number(localStorage.getItem("projectbrisket"))
+    let musicbrisket = Number(localStorage.getItem("musicbrisket"))
     musicbrisket = 0;
-    briskets = 0;
-    perrenialbrisket = 0;
-    contactbrisket = 0;
     projectbrisket = 0;
     inceptionbrisket = 0;
+    likesbrisket = 0;
+    contactbrisket = 0;
+    briskets = 0;
+    perrenialbrisket = 0;
     localStorage.setItem("perrenialbrisket", 0)
+    localStorage.setItem("contactbrisket", 0)
+    localStorage.setItem("inceptionbrisket", 0)
+    localStorage.setItem("likesbrisket", 0)
     localStorage.setItem("briskets", 0)
     localStorage.setItem("musicbrisket", 0)
-    localStorage.setItem("contactbrisket", 0)
-    localStorage.setItem("projectbrisket", 0)
-    localStorage.setItem("inceptionbrisket", 0)
+    localStorage.setItem("likesbrisket", 0)
     mew.play();
 })
