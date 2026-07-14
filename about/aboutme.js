@@ -12,6 +12,8 @@ if(localStorage.getItem("briskets") === null) {
 if(localStorage.getItem("contactbrisket") === null) {
     localStorage.setItem("contactbrisket", 0)
 }
+dayjs.extend(window.dayjs_plugin_duration);
+
 
 const tbper = document.getElementById("tbper")
 const tbmus = document.getElementById("tbmus")
@@ -21,6 +23,7 @@ const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
 const tbmisc = document.getElementById("tbmisc")
 const brisket = document.getElementById("brisket")
+const docage = document.getElementById("age")
 
 const img1 = document.getElementById("leftphoto")
 const img2 = document.getElementById("leftphoto2")
@@ -49,6 +52,34 @@ tbcon.addEventListener('mousedown', () => {
 tbmisc.addEventListener('mousedown', () => {
     window.location.href = ("/misc/")
 })
+
+const birthdate = dayjs("2010-02-03T07:52:00");
+
+function updateCounter() {
+    const now = dayjs();
+    let cursor = birthdate;
+
+    const years = now.diff(cursor, "year")
+    cursor = cursor.add(years, "year") 
+
+    const months = now.diff(cursor, "month")
+    cursor = cursor.add(months, "month")
+
+    const days = now.diff(cursor, "day")
+    cursor = cursor.add(days, "day")
+
+    const hours = now.diff(cursor, "hour")
+    cursor = cursor.add(hours, "hour")
+
+    const minutes = now.diff(cursor, "minute")
+    cursor = cursor.add(minutes, "minute")
+
+    const seconds = now.diff(cursor, "second")
+
+    docage.textContent = `${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds old`;
+}
+updateCounter();
+setInterval(updateCounter, 1000);
 
 /*brisket.addEventListener('mouseenter', () => {
     brisket.textContent = ("≽^•⩊•^≼")

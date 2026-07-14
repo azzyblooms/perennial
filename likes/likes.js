@@ -49,6 +49,7 @@ tbmisc.addEventListener('mousedown', () => {
 briskettext.addEventListener('mousedown', () => {
     if(brisket.style.display !== ("flex")) {
         whoop.play();
+        clicksound.play();
         brisket.classList.add("moving")
     }
     brisket.style.display = ("flex");

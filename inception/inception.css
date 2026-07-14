@@ -1,8 +1,31 @@
 body {
     background-color: rgb(0, 0, 0);
     color:white;
+    overflow:hidden;
     font-family:cursive;
+    margin:0;
 }
+body::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: -2;
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      transparent 0deg 15deg,
+      rgb(12, 12, 12) 15deg 30deg
+    );
+  animation: spin 18s linear infinite;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+
 #topbar {
     border-bottom:4px solid white;
     width:100vw;
@@ -28,6 +51,7 @@ body {
     90% {height:95px;}
     100% {height:100px;}
 }
+
 .tbb {
     animation: tbbounce 0.3s linear;
 }
@@ -84,13 +108,20 @@ body {
     font-size:60px;
     margin-top:8px;
 }
+#brisketwrapper {
+    display:flex;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+}
 #brisket {
     transition:opacity ease-in 2.5s, transform ease-in 2.5s;
     user-select: none;
     display:flex;
     font-size:50px;
-    margin-top:300px;
     align-self:center;
+    margin-bottom:115px;
+
     justify-content: center;
 }
 #brisket.sustingus {
