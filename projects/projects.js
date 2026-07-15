@@ -1,11 +1,12 @@
 
-const hoversound = new Audio('/audio/hover.mp3')
-const clicksound = new Audio('/audio/click2.mp3')
-const catcollect = new Audio ('/audio/catcollect.wav')
-const mew = new Audio ('/audio/mew.wav')
-const show = new Audio ('/audio/In.ogg')
-const hide = new Audio ('/audio/Out.ogg')
-const boom = new Audio ('/audio/boom.mp3')
+const hoversound = new Audio('/perennial/audio/hover.mp3')
+const clicksound = new Audio('/perennial/audio/click2.mp3')
+const catcollect = new Audio ('/perennial/audio/catcollect.wav')
+const mew = new Audio ('/perennial/audio/mew.wav')
+const show = new Audio ('/perennial/audio/In.ogg')
+const hide = new Audio ('/perennial/audio/Out.ogg')
+const boom = new Audio ('/perennial/audio/boom.mp3')
+const smallboom = new Audio ('/perennial/audio/boom.mp3')
 if(localStorage.getItem("briskets") === null) {
     localStorage.setItem("briskets", 0)
 }
@@ -109,7 +110,7 @@ majorbox.addEventListener('mousedown', () => {
     if(!overbox) {
         open = !open;
         if(open) {
-            boom.cloneNode(true).play();
+            boom.play();
             majorbox.style.paddingBottom = ("40px")
             b1.style.display = ("flex")
             b2.style.display = ("flex")
@@ -141,7 +142,9 @@ minorbox.addEventListener('mousedown', () => {
     if(!moverbox) {
         mopen = !mopen;
         if(mopen) {
-            boom.cloneNode(true).play();
+            smallboom.preservesPitch = false;
+            smallboom.playbackRate = 1.2;
+            smallboom.play();
             minorbox.style.paddingBottom = ("30px")
             mb1.style.display = ("flex")
             mb2.style.display = ("flex")

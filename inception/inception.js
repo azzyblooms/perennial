@@ -1,13 +1,13 @@
 
-const hoversound = new Audio('/audio/hover.mp3')
-const clicksound = new Audio('/audio/click2.mp3')
-const catcollect = new Audio ('/audio/catcollect.wav')
-const mew = new Audio ('/audio/deepmew.wav')
-const whoop = new Audio ('/audio/snd_slidewhist.wav')
-const show = new Audio ('/audio/In.ogg')
-const fall = new Audio ('/audio/fall.wav')
-const boom = new Audio ('/audio/boom.mp3')
-const hide = new Audio ('/audio/Out.ogg')
+const hoversound = new Audio('/perennial/audio/hover.mp3')
+const clicksound = new Audio('/perennial/audio/click2.mp3')
+const catcollect = new Audio('/perennial/audio/catcollect.wav')
+const mew = new Audio('/perennial/audio/deepmew.wav')
+const whoop = new Audio('/perennial/audio/snd_slidewhist.wav')
+const show = new Audio('/perennial/audio/In.ogg')
+const fall = new Audio('/perennial/paudio/fall.wav')
+const boom = new Audio('/perennial/audio/boom.mp3')
+const hide = new Audio('/perennial/audio/Out.ogg')
 if(localStorage.getItem("briskets") === null) {
     localStorage.setItem("briskets", 0)
 }
