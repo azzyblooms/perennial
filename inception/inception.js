@@ -28,7 +28,7 @@ const spiral = document.getElementById("spiral")
 
 
 const BASE = window.location.hostname === "azzyblooms.github.io"
-    ? perennial
+    ? "/perennial"
     : "";
 function go(path) {
     window.location.href = BASE + path;

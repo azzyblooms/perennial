@@ -31,7 +31,7 @@ const tbcon = document.getElementById("tbcon")
 const tbmisc = document.getElementById("tbmisc")
 
 const BASE = window.location.hostname === "azzyblooms.github.io"
-    ? perennial
+    ? "/perennial"
     : "";
 function go(path) {
     window.location.href = BASE + path;
@@ -100,27 +100,27 @@ mebutton.addEventListener('mouseleave', () => {
 })
 musicbutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("/music")
+    go("/music/")
 })
 projectbutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("/projects")
+    go("/projects/")
 })
 miscbutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("/wip")
+    go("/misc/")
 })
 contactbutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("/contacts")
+    go("/contacts/")
 })
 likebutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("/likes")
+    go("/likes/")
 })
 mebutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = ("/wip")
+    go("/about/")
 })
 brisket.addEventListener('mouseenter', () => {
     brisket.textContent = "≽^•⩊•^≼";
