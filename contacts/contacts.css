@@ -2,14 +2,14 @@ body {
     background-color: rgb(201, 61, 126);
     color:white;
     font-family:cursive;
+    margin:0;
 }
 #topbar {
     border-bottom:4px solid white;
-    width:100vw;
+    width:100%;
+    box-sizing: border-box;
     height:50px;
     background-color: rgb(197, 115, 186);
-    margin-left:-8px;
-    margin-top:-8px;
     justify-content:center;
     align-items:center;
     display:flex;

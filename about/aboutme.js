@@ -25,11 +25,14 @@ const tbmisc = document.getElementById("tbmisc")
 const brisket = document.getElementById("brisket")
 const docage = document.getElementById("age")
 
-const img1 = document.getElementById("leftphoto")
-const img2 = document.getElementById("leftphoto2")
+const img1 = document.getElementById("outphotoleft")
+const img2 = document.getElementById("photoleft")
 const img3 = document.getElementById("bigphoto")
-const img4 = document.getElementById("rightphoto")
-const img5 = document.getElementById("rightphoto2")
+const img4 = document.getElementById("photoright")
+const img5 = document.getElementById("outphotoright")
+
+const images = [1, 2, 3, 4, 5, 6, 7];
+const docimg = [img1, img2, img3, img4, img5];
 
 tbper.addEventListener('mousedown', () => {
     window.location.href = "/";
@@ -80,6 +83,37 @@ function updateCounter() {
 }
 updateCounter();
 setInterval(updateCounter, 1000);
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateImages();
+})
+document.addEventListener("keydown", (event) => {
+    if(event.key === 'ArrowRight' || event.key === 'd') {
+        goRight();
+    }
+})
+document.addEventListener("keydown", (event) => {
+    if(event.key === 'ArrowLeft' || event.key === 'a') {
+        goLeft();
+    }
+})
+function updateImages() {
+    docimg.forEach((img, index) => {
+        img.src = `/images/gallery/${images[index]}.png`;
+    });
+}
+function goRight() {
+    images.unshift(images.pop());
+    updateImages();
+    hoversound.cloneNode(true).play();
+}
+function goLeft() {
+    images.push(images.shift());
+    updateImages();
+    hoversound.cloneNode(true).play();
+}
+
+
 
 /*brisket.addEventListener('mouseenter', () => {
     brisket.textContent = ("≽^•⩊•^≼")

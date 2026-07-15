@@ -1,8 +1,4 @@
-body {
-    background-color: rgb(201, 61, 126);
-    color:white;
-    font-family:cursive;
-}
+
 @keyframes revbganime1 {
     0% {opacity:1; transform:scale(0.01)}
     99% {opacity:0; transform:scale(50)}
@@ -24,7 +20,7 @@ body {
     top:50%;
     inset:0;
     background-image: radial-gradient(circle, rgba(255,255,255,0.1) 18px, transparent 22px);
-
+    z-index:-3;
     background-size: 100px 100px;
     animation:revbganime1 15s linear infinite;
     background-attachment: fixed;
@@ -36,6 +32,7 @@ body {
     position:fixed;
     top:50%;
     inset:0;
+    z-index:-2;
     background-image: radial-gradient(circle, rgba(255,0,0,0.1) 18px, transparent 22px);
     background-size: 100px 100px;
     animation:revbganime2 11.5s linear infinite;
@@ -45,6 +42,7 @@ body {
 }
 #background3 {
     width:100vw;
+    z-index:-1;
     position:fixed;
     top:50%;
     inset:0;
@@ -55,13 +53,18 @@ body {
     background-position: center center;
     background-repeat:no-repeat
 }
+body {
+    background-color: rgb(201, 61, 126);
+    color:white;
+    font-family:cursive;
+    margin:0;
+}
 #topbar {
     border-bottom:4px solid white;
-    width:100vw;
+    width:100%;
+    box-sizing: border-box;
     height:50px;
     background-color: rgb(197, 115, 186);
-    margin-left:-8px;
-    margin-top:-8px;
     justify-content:center;
     align-items:center;
     display:flex;
