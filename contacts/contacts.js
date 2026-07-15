@@ -93,27 +93,19 @@ document.addEventListener('DOMContentLoaded', () => {
     ytcontact.style.filter = "opacity(0)";
 })
 
-tbper.addEventListener('mousedown', () => {
-    window.location.href = "/";
-})
-tbmus.addEventListener('mousedown', () => {
-    window.location.href = ("/music/")
-})
-tblik.addEventListener('mousedown', () => {
-    window.location.href = ("/likes/")
-})
-tbabt.addEventListener('mousedown', () => {
-    window.location.href = ("/about/")
-})
-tbproj.addEventListener('mousedown', () => {
-    window.location.href = ("/projects/")
-})
-tbcon.addEventListener('mousedown', () => {
-    window.location.href = ("/contacts/")
-})
-tbmisc.addEventListener('mousedown', () => {
-    window.location.href = ("/misc/")
-})
+const BASE = window.location.hostname === "azzyblooms.github.io"
+    ? perennial
+    : "";
+function go(path) {
+    window.location.href = BASE + path;
+}
+tbper.addEventListener('mousedown', () => go("/"))
+tbmus.addEventListener('mousedown', () => go("/music/"))
+tblik.addEventListener('mousedown', () => go("/likes/"))
+tbabt.addEventListener('mousedown', () => go("/about/"))
+tbproj.addEventListener('mousedown', () => go("/projects/"))
+tbcon.addEventListener('mousedown', () => go("/contacts/"))
+tbmisc.addEventListener('mousedown', () => go("/misc/"))
 
 act.addEventListener('mouseenter', () => {
     act.textContent = ("CAT")
