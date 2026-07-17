@@ -247,9 +247,9 @@ pb5github.addEventListener('mousedown', () => {
 pb5github.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();
 })
-pb5image.addEventListener('mousedown', () => {
-    window.location.href = '/inception'
+pb5image.addEventListener('mousedown', () => {    
     clicksound.play();
+    go("/misc/")
 })
 pb5image.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();

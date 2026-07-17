@@ -24,6 +24,10 @@ const tbcon = document.getElementById("tbcon")
 const tbmisc = document.getElementById("tbmisc")
 const brisket = document.getElementById("brisket")
 const docage = document.getElementById("age")
+const basket = document.getElementById("funfactbasket")
+const shader = document.getElementById("pageshader")
+const ffwrap = document.getElementById("ffwrap")
+const fact = document.getElementById("funfact")
 
 const img1 = document.getElementById("outphotoleft")
 const img2 = document.getElementById("photoleft")
@@ -33,6 +37,13 @@ const img5 = document.getElementById("outphotoright")
 
 const images = [1, 2, 3, 4, 5, 6, 7];
 const docimg = [img1, img2, img3, img4, img5];
+
+const dyears = document.getElementById("years")
+const dmonths = document.getElementById("months")
+const ddays = document.getElementById("days")
+const dhours = document.getElementById("hours")
+const dminutes = document.getElementById("minutes")
+const dseconds = document.getElementById("seconds")
 
 
 const BASE = window.location.hostname === "azzyblooms.github.io"
@@ -72,7 +83,12 @@ function updateCounter() {
 
     const seconds = now.diff(cursor, "second")
 
-    docage.textContent = `${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds old`;
+    dyears.textContent = `${years} years`;
+    dmonths.textContent = `${months} months`;
+    ddays.textContent = `${days} days`;
+    dhours.textContent = `${hours} hours`;
+    dminutes.textContent = `${minutes} minutes`;
+    dseconds.textContent = `${seconds} seconds old.`
 }
 updateCounter();
 setInterval(updateCounter, 1000);
@@ -105,7 +121,21 @@ function goLeft() {
     updateImages();
     hoversound.cloneNode(true).play();
 }
-
+basket.addEventListener('mousedown', () => {
+    clicksound.cloneNode(true).play();
+    shader.style.zIndex = 5;
+    ffwrap.style.zIndex = 6;
+    ffwrap.style.animation = ("factenter 1s ease-in-out")
+    shader.style.opacity = 0.6;
+    setTimeout(() => {
+        shader.style.opacity = 0;
+        ffwrap.style.animation = ("factexit 1s ease-in-out")
+        setTimeout(() => {
+            shader.style.zIndex = -100;
+            ffwrap.style.zIndex = -100;
+        }, 1000)
+    }, 5000)
+})
 
 
 /*brisket.addEventListener('mouseenter', () => {
