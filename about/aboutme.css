@@ -388,24 +388,35 @@ a {
     background-color: black;
 }
 #funfact {
-    width:200px;
-    height:70px;
-    border:4px solid black;
+    width:fit-content;
+    padding:5px;
+    display:flex;
+    align-items: center;
+    height:50px;
+    border:4px outset black;
     background-color: antiquewhite;
     color: gray;
     font-size:20px;
     text-align:center;
 }
+#aboutwrap1 {
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap:10px;
+    padding:10px;
+}
 #ffwrap {
     position:fixed;
     left:50%;
+    opacity:0;
     z-index: -100;
     top:50%;
     transform:translate(-50%, -50%)
 }
 @keyframes factenter {
     from {
-        left:-5%;
+        left:-15%;
     } to {
         left:50%
     }

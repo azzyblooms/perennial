@@ -28,6 +28,7 @@ const basket = document.getElementById("funfactbasket")
 const shader = document.getElementById("pageshader")
 const ffwrap = document.getElementById("ffwrap")
 const fact = document.getElementById("funfact")
+const temperature = document.getElementById("temp")
 
 const img1 = document.getElementById("outphotoleft")
 const img2 = document.getElementById("photoleft")
@@ -124,6 +125,10 @@ function goLeft() {
 basket.addEventListener('mousedown', () => {
     clicksound.cloneNode(true).play();
     shader.style.zIndex = 5;
+    ffwrap.style.opacity = 1;
+    fact.style.opacity = 1;
+    const randomFact = facts[Math.floor(Math.random() * facts.length)]
+    fact.textContent = randomFact;
     ffwrap.style.zIndex = 6;
     ffwrap.style.animation = ("factenter 1s ease-in-out")
     shader.style.opacity = 0.6;
@@ -133,6 +138,8 @@ basket.addEventListener('mousedown', () => {
         setTimeout(() => {
             shader.style.zIndex = -100;
             ffwrap.style.zIndex = -100;
+            ffwrap.style.opacity = 0;
+            fact.style.opacity = 1;
         }, 1000)
     }, 5000)
 })
@@ -221,3 +228,39 @@ document.addEventListener('keydown', () => {
     localStorage.setItem("likesbrisket", 0)
     mew.play();
 })*/
+
+
+async function getWeather() {
+    const apikey = "49f0506a9ea95970a80ce421edbc038f";
+    const found = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=45.4215&lon=-75.6903&units=metric&appid=${apikey}`)
+    const data = await found.json();
+    console.log(data)
+    temperature.textContent = `${data.main.temp}°C`;
+    const icon = data.weather[0].icon;
+}
+getWeather();
+
+const facts = [
+    "1. I saw Angine de Poitrine in concert.",
+    "2. My favourite fruit is mango.",
+    "3. I used to make mods for Terraria.",
+    "4. I use Legere synthetic reeds.",
+    "5. I've been to 10 different countries.",
+    "6. I started coding when I was 9.",
+    "7. I joined Hack Club in November 2025.",
+    "8. I build extensions for instruments.",
+    "9. I want to make a mechatronic instrument.",
+    "10. I build extensions for instruments.",
+    "11. I speak both English and French.",
+    "12. My favourite song is Twilight by boa.",
+    "13. My favourite monster is the blue hawaiian.",
+    "14. Pineapple belongs on pizza.",
+    "15. My favourite season is summer.",
+    "16. I don't like tea.",
+    "17. I want to become a music teacher.",
+    "18. I am working on a contra-alto extension to low A.",
+    "19. dude i fucken love frank's red hot.",
+    "20. My favourite fictional character is Noelle Deltarune.",
+    "21. I'm making OCs based on band instruments.",
+    "22. More facts coming soon!",
+]
