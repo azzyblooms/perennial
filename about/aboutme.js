@@ -13,7 +13,9 @@ if(localStorage.getItem("contactbrisket") === null) {
     localStorage.setItem("contactbrisket", 0)
 }
 dayjs.extend(window.dayjs_plugin_duration);
+dayjs.extend(window.dayjs_plugin_utc);
 
+let data;
 
 const tbper = document.getElementById("tbper")
 const tbmus = document.getElementById("tbmus")
@@ -29,6 +31,11 @@ const shader = document.getElementById("pageshader")
 const ffwrap = document.getElementById("ffwrap")
 const fact = document.getElementById("funfact")
 const temperature = document.getElementById("temp")
+const weathertype = document.getElementById("weathertype")
+const specifics = document.getElementById("specifics")
+const feelslike = document.getElementById("feelslike")
+const weathericon = document.getElementById("daynnite")
+const clock = document.getElementById("time")
 
 const img1 = document.getElementById("outphotoleft")
 const img2 = document.getElementById("photoleft")
@@ -228,17 +235,86 @@ document.addEventListener('keydown', () => {
     localStorage.setItem("likesbrisket", 0)
     mew.play();
 })*/
+const weathernames = {
+    "clear sky": "Sunny",
+    "few clouds": "Partly Cloudy",
+    "scattered clouds": "Partly Cloudy",
+    "broken clouds": "Mostly Cloudy",
+    "overcast clouds": "Overcast",
+    "mist": "Fog",
+    "fog": "Fog",
+    "haze": "Haze",
+    "smoke": "Smoke",
+    "ragged shower rain": "Scattered Rain",
+    "light intensity drizzle": "Light Rain",
+    "light intensity drizzle rain": "Light Rain",
+    "light intensity shower rain": "Light Rain",
+    "light rain": "Light Rain",
+    "drizzle": "Light Rain",
+    "moderate rain": "Rain",
+    "shower rain": "Rain",
+    "shower drizzle": "Rain",
+    "drizzle rain": "Rain",
+    "shower rain and drizzle": "Rain",
+    "heavy intensity drizzle": "Rain",
+    "heavy intensity drizzle rain": "Heavy Rain",
+    "heavy shower rain and drizzle": "Heavy Rain",
+    "heavy intensity drizzle rain": "Heavy Rain",
+    "heavy shower rain and drizzle": "Heavy Rain",
+    "heavy intensity shower rain": "Heavy Rain",
+    "heavy intensity rain": "Heavy Rain",
+    "very heavy rain": "Torrential Rain",
+    "extreme rain": "Torrential Rain",
+    "squalls": "Windy",
+    "ragged thunderstorm": "Scattered Thunderstorms",
+    "thunderstorm with light drizzle": "Thunderstorm",
+    "thunderstorm with drizzle": "Thunderstorm",
+    "thunderstorm with heavy drizzle": "Thunderstorm",
+    "light thunderstorm": "Thunderstorm",
+    "thunderstorm": "Thunderstorm",
+    "thunderstorm with light rain": "Thunderstorm",
+    "thunderstorm with heavy rain": "Thunderstorm",
+    "heavy thunderstorm": "Severe Thunderstorm",
+    "tornado": "Tornado",
+    "light rain and snow": "Rain and Snow",
+    "rain and snow": "Rain and Snow",
+    "light shower snow": "Rain and Snow",
+    "shower snow": "Rain and Snow",
+    "heavy shower snow": "Rain and Snow",
+    "freezing rain": "Freezing Rain",
+    "light snow": "Light Snow",
+    "snow": "Snow",
+    "heavy snow": "Heavy Snow",
+    "sleet": "Hail",
+    "light shower sleet": "Hail",
+    "shower sleet": "Hail",
+}
+
+
+
 
 
 async function getWeather() {
     const apikey = "49f0506a9ea95970a80ce421edbc038f";
     const found = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=45.4215&lon=-75.6903&units=metric&appid=${apikey}`)
-    const data = await found.json();
+    data = await found.json();
     console.log(data)
-    temperature.textContent = `${data.main.temp}°C`;
+    weathericon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+    temperature.textContent = `${Math.round(data.main.temp)}°C`;
+    feelslike.textContent = `feels like ${Math.round(data.main.feels_like)}°C`
+    specifics.textContent =(weathernames[data.weather[0].description] ?? data.weather[0].description).toLowerCase();
     const icon = data.weather[0].icon;
 }
+
 getWeather();
+async function getTime() {
+    const now = dayjs.utc().utcOffset(data.timezone / 60);
+
+    clock.textContent = `${now.format("h:mm A")} ET`
+}
+getTime();
+setInterval(getTime, 1000);
+
 
 const facts = [
     "1. I saw Angine de Poitrine in concert.",
