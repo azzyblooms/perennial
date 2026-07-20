@@ -289,6 +289,60 @@ const weathernames = {
     "light shower sleet": "Hail",
     "shower sleet": "Hail",
 }
+const weathercolors = {
+    "clear sky": "rgb(229, 190, 0)",
+    "few clouds": "rgb(255, 239, 158)",
+    "scattered clouds": "rgb(212, 212, 212)",
+    "broken clouds": "rgb(212, 212, 212)",
+    "overcast clouds": "rgb(161, 161, 161)",
+    "mist": "rgb(172, 172, 172)",
+    "fog": "rgb(161, 161, 161)",
+    "haze": "rgb(122, 122, 122)",
+    "smoke": "rgb(34, 34, 34)",
+    "ragged shower rain": "rgb(105, 207, 255)",
+    "light intensity drizzle": "rgb(105, 207, 255)",
+    "light intensity drizzle rain": "rgb(105, 207, 255)",
+    "light intensity shower rain": "rgb(105, 207, 255)",
+    "light rain": "rgb(105, 207, 255)",
+    "drizzle": "rgb(105, 207, 255)",
+    "moderate rain": "rgb(46, 130, 168)",
+    "shower rain": "rgb(46, 130, 168)",
+    "shower drizzle": "rgb(46, 130, 168)",
+    "drizzle rain": "rgb(46, 130, 168)",
+    "shower rain and drizzle": "rgb(46, 130, 168)",
+    "heavy intensity drizzle": "rgb(46, 130, 168)",
+    "heavy intensity drizzle rain": "rgb(38, 92, 117)",
+    "heavy shower rain and drizzle": "rgb(38, 92, 117)",
+    "heavy intensity drizzle rain": "rgb(38, 92, 117)",
+    "heavy shower rain and drizzle": "rgb(38, 92, 117)",
+    "heavy intensity shower rain": "rgb(38, 92, 117)",
+    "heavy intensity rain": "rgb(38, 92, 117)",
+    "very heavy rain": "rgb(23, 55, 70)",
+    "extreme rain": "rgb(23, 55, 70)",
+    "squalls": "rgb(209, 203, 175)",
+    "ragged thunderstorm": "rgb(33, 48, 54)",
+    "thunderstorm with light drizzle": "rgb(33, 48, 54)",
+    "thunderstorm with drizzle": "rgb(33, 48, 54)",
+    "thunderstorm with heavy drizzle": "rgb(33, 48, 54)",
+    "light thunderstorm": "rgb(33, 48, 54)",
+    "thunderstorm": "rgb(33, 48, 54)",
+    "thunderstorm with light rain": "rgb(33, 48, 54)",
+    "thunderstorm with heavy rain": "rgb(33, 48, 54)",
+    "heavy thunderstorm": "rgb(24, 31, 34)",
+    "tornado": "rgb(24, 31, 34)",
+    "light rain and snow": "rgb(168, 169, 255)",
+    "rain and snow": "rgb(168, 169, 255)",
+    "light shower snow": "rgb(168, 169, 255)",
+    "shower snow": "rgb(168, 169, 255)",
+    "heavy shower snow": "rgb(168, 169, 255)",
+    "freezing rain": "rgb(93, 94, 172)n",
+    "light snow": "rgb(243, 203, 255)",
+    "snow": "rgb(185, 127, 202)",
+    "heavy snow": "rgb(124, 52, 146)",
+    "sleet": "rgb(69, 43, 77)",
+    "light shower sleet": "rgb(69, 43, 77)",
+    "shower sleet": "rgb(69, 43, 77)",
+}
 
 
 
@@ -303,14 +357,24 @@ async function getWeather() {
     temperature.textContent = `${Math.round(data.main.temp)}°C`;
     feelslike.textContent = `feels like ${Math.round(data.main.feels_like)}°C`
     specifics.textContent =(weathernames[data.weather[0].description] ?? data.weather[0].description).toLowerCase();
+    specifics.style.webkitTextStroke = `1.5px ${(weathercolors[data.weather[0].description])}` ?? "1.5px black";
     const icon = data.weather[0].icon;
 }
-
+const colon = document.getElementById("colon")
+const ampm = document.getElementById("ampm")
+const clockhour = document.getElementById("hour")
+const clockminute = document.getElementById("minute")
 getWeather();
 async function getTime() {
+    if(colon.style.opacity == "1") {
+        colon.style.opacity = "0"
+    } else {
+        colon.style.opacity = "1"
+    }
     const now = dayjs.utc().utcOffset(data.timezone / 60);
 
-    clock.textContent = `${now.format("h:mm A")} ET`
+    clockhour.textContent = `${now.format("HH")}`
+    clockminute.textContent = `${now.format("mm")}`
 }
 getTime();
 setInterval(getTime, 1000);
