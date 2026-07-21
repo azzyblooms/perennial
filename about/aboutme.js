@@ -131,6 +131,7 @@ function goLeft() {
 }
 basket.addEventListener('mousedown', () => {
     clicksound.cloneNode(true).play();
+    show.cloneNode(true).play();
     shader.style.zIndex = 5;
     ffwrap.style.opacity = 1;
     fact.style.opacity = 1;
@@ -141,6 +142,7 @@ basket.addEventListener('mousedown', () => {
     shader.style.opacity = 0.6;
     setTimeout(() => {
         shader.style.opacity = 0;
+        hide.cloneNode(true).play();
         ffwrap.style.animation = ("factexit 1s ease-in-out")
         setTimeout(() => {
             shader.style.zIndex = -100;
@@ -148,7 +150,7 @@ basket.addEventListener('mousedown', () => {
             ffwrap.style.opacity = 0;
             fact.style.opacity = 1;
         }, 1000)
-    }, 5000)
+    }, 3500)
 })
 
 
@@ -294,7 +296,7 @@ const weathercolors = {
     "few clouds": "rgb(255, 239, 158)",
     "scattered clouds": "rgb(212, 212, 212)",
     "broken clouds": "rgb(212, 212, 212)",
-    "overcast clouds": "rgb(161, 161, 161)",
+    "overcast clouds": "rgb(255, 255, 255)",
     "mist": "rgb(172, 172, 172)",
     "fog": "rgb(161, 161, 161)",
     "haze": "rgb(122, 122, 122)",
@@ -402,5 +404,13 @@ const facts = [
     "19. dude i fucken love frank's red hot.",
     "20. My favourite fictional character is Noelle Deltarune.",
     "21. I'm making OCs based on band instruments.",
-    "22. More facts coming soon!",
+    "22. I have a YouTube channel with over 2.5k subs.",
+    "23. My longest single bike ride was 67.25km.",
+    "24. Low reeds are the best band section.",
+    "25. I compose music.",
+    "26. I might start selling said music if I make something good enough.",
+    "27. If I can't be a music teacher, my backup is in computer science.",
+    "28. Biology is my least favourite subject.",
+    "29. I lowkey wanna figure out crypto (I HAVE GOOD REASONS! ITS FOR MY HEALTH!!!)",
+    "30. More facts coming soon!",
 ]
