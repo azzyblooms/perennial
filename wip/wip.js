@@ -3,15 +3,15 @@ const hoversound = new Audio('/perennial/audio/hover.mp3')
 const clicksound = new Audio('/perennial/audio/click2.mp3')
 const catcollect = new Audio ('/perennial/audio/catcollect.wav')
 const mew = new Audio ('/perennial/audio/mew.wav')
-const whoop = new Audio ('/perennial/audio/snd_slidewhist.wav')
 const show = new Audio ('/perennial/audio/In.ogg')
 const hide = new Audio ('/perennial/audio/Out.ogg')
-
+const boom = new Audio ('/perennial/audio/boom.mp3')
+const smallboom = new Audio ('/perennial/audio/boom.mp3')
 if(localStorage.getItem("briskets") === null) {
     localStorage.setItem("briskets", 0)
 }
-if(localStorage.getItem("likesbrisket") === null) {
-    localStorage.setItem("likesbrisket", 0)
+if(localStorage.getItem("projectbrisket") === null) {
+    localStorage.setItem("projectbrisket", 0)
 }
 
 const tbper = document.getElementById("tbper")
@@ -21,8 +21,8 @@ const tbabt = document.getElementById("tbabt")
 const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
 const tbmisc = document.getElementById("tbmisc")
-const briskettext = document.getElementById("briskettext")
-const brisket = document.getElementById("brisket")
+
+
 
 const BASE = window.location.hostname === "azzyblooms.github.io"
     ? "/perennial"
@@ -38,71 +38,6 @@ tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
 tbmisc.addEventListener('mousedown', () => go("/wip/"))
 
-briskettext.addEventListener('mousedown', () => {
-    if(brisket.style.display !== ("flex")) {
-        whoop.play();
-        clicksound.play();
-        brisket.classList.add("moving")
-    }
-    brisket.style.display = ("flex");
-    
-})
-brisket.addEventListener('mousedown', () => {
-    let likesbrisket = Number(localStorage.getItem("likesbrisket"))
-    let briskets = Number(localStorage.getItem("briskets"))
-    brisket.textContent = "≽^•⩊-^≼";
-    const mouseX = event.clientX;
-    brisket.style.left = `${mouseX}px`;
-    mew.preservesPitch = false;
-    mew.playbackRate = 1.2;
-    brisket.classList.remove("moving")
-    if(likesbrisket == 1) {
-        clicksound.play();
-    } else {
-        mew.play();
-    }
-    presentBriskets();
-    brisket.classList.add("sustingus")
-    brisketnumber.textContent = Number(localStorage.getItem("briskets"));
-    setTimeout(() => {
-        show.play();
-    }, 2350)
-})
-function presentBriskets() {
-    let likesbrisket = Number(localStorage.getItem("likesbrisket"))
-    let briskets = Number(localStorage.getItem("briskets"))
-    brisketcounter.style.transition = ("transform ease-out 4s")
-    brisketcounter.classList.add("showing")
-    setTimeout(() => {
-            catcollect.preservesPitch = false;
-            if(likesbrisket == 0) {
-                if(briskets > 1) {
-                catcollect.playbackRate = (Math.sqrt(briskets) / 1.39)
-            } else {
-                catcollect.playbackRate = 1;
-            }
-                catcollect.play();
-                brisketIncrease();
-            }
-
-            setTimeout(() => {    
-                brisketcounter.style.transition = ("transform ease-in 4s")
-                brisketcounter.classList.remove("showing")
-                hide.play();
-            }, 1000)
-    }, 4500)
-}
-function brisketIncrease() {
-    let likesbrisket = Number(localStorage.getItem("likesbrisket"))
-    let briskets = Number(localStorage.getItem("briskets"))
-    if(likesbrisket == 0) {
-        briskets++;
-        likesbrisket = 1;
-        localStorage.setItem("likesbrisket", 1)
-        localStorage.setItem("briskets", briskets)
-        brisketnumber.textContent = Number(localStorage.getItem("briskets"));
-    }
-}
 document.addEventListener('keydown', (event) => {
     if(event.key === "b") {
         let perrenialbrisket = Number(localStorage.getItem("perrenialbrisket"))
@@ -128,4 +63,25 @@ document.addEventListener('keydown', (event) => {
         localStorage.setItem("musicbrisket", 0)
         mew.play();
     }
+})
+
+const enterSounds = [
+    "/perennial/audio/floweryvoice/foundglue.mp3",
+    "/perennial/audio/floweryvoice/hehjarona.mp3",
+    "/perennial/audio/floweryvoice/HEREICOME.mp3",
+    "/perennial/audio/floweryvoice/hey.mp3",
+    "/perennial/audio/floweryvoice/heyboys.mp3",
+    "/perennial/audio/floweryvoice/heylilguy.mp3",
+    "/perennial/audio/floweryvoice/itsmeflowery.mp3",
+    "/perennial/audio/floweryvoice/mysterywind.mp3",
+    "/perennial/audio/floweryvoice/leafittome.mp3",
+    "/perennial/audio/floweryvoice/sorrywaiting.mp3",
+    "/perennial/audio/floweryvoice/sorrywaitingalt.mp3"
+]
+let currentJarona = new Audio('/perennial/audio/floweryvoice/foundglue.mp3')
+const flowery = document.getElementById("floweryimg")
+
+flowery.addEventListener('mousedown', () => {
+    currentJarona = new Audio(`${enterSounds[Math.floor(Math.random() * 11)]}`)
+    currentJarona.cloneNode(true).play();
 })

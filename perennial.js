@@ -42,7 +42,7 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
-tbmisc.addEventListener('mousedown', () => go("/misc/"))
+tbmisc.addEventListener('mousedown', () => go("/wip/"))
 
 musicbutton.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();
@@ -108,7 +108,7 @@ projectbutton.addEventListener('mousedown', () => {
 })
 miscbutton.addEventListener('mousedown', () => {
     clicksound.play();
-    go("/misc/")
+    go("/wip/")
 })
 contactbutton.addEventListener('mousedown', () => {
     clicksound.play();
@@ -120,7 +120,7 @@ likebutton.addEventListener('mousedown', () => {
 })
 mebutton.addEventListener('mousedown', () => {
     clicksound.play();
-    go("/about/")
+    window.location.href = "http://127.0.0.1:3000/404.html"
 })
 brisket.addEventListener('mouseenter', () => {
     brisket.textContent = "≽^•⩊•^≼";
@@ -202,9 +202,9 @@ document.addEventListener('keydown', (event) => {
         localStorage.setItem("contactbrisket", 0)
         localStorage.setItem("inceptionbrisket", 0)
         localStorage.setItem("likesbrisket", 0)
+        localStorage.setItem("projectbrisket", 0)
         localStorage.setItem("briskets", 0)
         localStorage.setItem("musicbrisket", 0)
-        localStorage.setItem("likesbrisket", 0)
         mew.play();
     }
 })

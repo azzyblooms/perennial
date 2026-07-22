@@ -62,7 +62,7 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
-tbmisc.addEventListener('mousedown', () => go("/misc/"))
+tbmisc.addEventListener('mousedown', () => go("/wip/"))
 
 yapincoming.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();
@@ -443,9 +443,9 @@ document.addEventListener('keydown', (event) => {
         localStorage.setItem("contactbrisket", 0)
         localStorage.setItem("inceptionbrisket", 0)
         localStorage.setItem("likesbrisket", 0)
+        localStorage.setItem("projectbrisket", 0)
         localStorage.setItem("briskets", 0)
         localStorage.setItem("musicbrisket", 0)
-        localStorage.setItem("likesbrisket", 0)
         mew.play();
     }
 })
