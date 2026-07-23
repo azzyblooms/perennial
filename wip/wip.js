@@ -7,6 +7,7 @@ const show = new Audio ('/perennial/audio/In.ogg')
 const hide = new Audio ('/perennial/audio/Out.ogg')
 const boom = new Audio ('/perennial/audio/boom.mp3')
 const smallboom = new Audio ('/perennial/audio/boom.mp3')
+
 if(localStorage.getItem("briskets") === null) {
     localStorage.setItem("briskets", 0)
 }
@@ -65,23 +66,281 @@ document.addEventListener('keydown', (event) => {
     }
 })
 
-const enterSounds = [
-    "/perennial/audio/floweryvoice/foundglue.mp3",
-    "/perennial/audio/floweryvoice/hehjarona.mp3",
-    "/perennial/audio/floweryvoice/HEREICOME.mp3",
-    "/perennial/audio/floweryvoice/hey.mp3",
-    "/perennial/audio/floweryvoice/heyboys.mp3",
-    "/perennial/audio/floweryvoice/heylilguy.mp3",
-    "/perennial/audio/floweryvoice/itsmeflowery.mp3",
-    "/perennial/audio/floweryvoice/mysterywind.mp3",
-    "/perennial/audio/floweryvoice/leafittome.mp3",
-    "/perennial/audio/floweryvoice/sorrywaiting.mp3",
-    "/perennial/audio/floweryvoice/sorrywaitingalt.mp3"
+const posSounds = [
+    {
+        sound: "/perennial/audio/floweryvoice/jarona1.mp3",
+        text: "Jarona!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/jarona2.mp3",
+        text: "Jarona!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/jarona3.mp3",
+        text: "Jarona!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/jarona4.mp3",
+        text: "Jarona!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/jaorangealt.mp3",
+        text: "Ja- orange!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/jaorangealt.mp3",
+        text: "Ja- orange!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/yes.mp3",
+        text: "Yes!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/takethat.mp3",
+        text: "Take that!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/thatsgreat.mp3",
+        text: "That's great!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/wow.mp3",
+        text: "Wow!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/sustingus.mp3",
+        text: "Sustingus!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/glue.mp3",
+        text: "Glue!"
+    }
 ]
+
+const negSounds = [
+    {
+        sound: "/perennial/audio/floweryvoice/flesh.mp3",
+        text: "They're eating my flesh!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/no.mp3",
+        text: "No, no, no!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/predictable.mp3",
+        text: "What a predictable creature!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/falling.mp3",
+        text: "I'm falling!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/dead.mp3",
+        text: "You're dead."
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/goodbye.mp3",
+        text: "Goodbye..."
+    }
+]
+
+const enterSounds = [
+    {
+        sound: "/perennial/audio/floweryvoice/foundglue.mp3",
+        text: "Hey guys, I think I found a glue!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/hehjarona.mp3",
+        text: "Heh, it's my jarona!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/HEREICOME.mp3",
+        text: "HERE I COME SAN FRANDISCO!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/hey.mp3",
+        text: "Hey!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/heyboys.mp3",
+        text: "Hey, boys!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/heylilguy.mp3",
+        text: "Hey there, little guy!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/itsmeflowery.mp3",
+        text: "It's me, Flowery!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/mysterywind.mp3",
+        text: "mysterious wind"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/leafittome.mp3",
+        text: "Leaf it to me!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/sorrywaiting.mp3",
+        text: "Sorry to keep you waiting."
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/sorrywaitingalt.mp3",
+        text: "Sorry to keep you waiting!"
+    }
+]
+
+const allSounds = [
+    {
+        sound: "/perennial/audio/floweryvoice/foundglue.mp3",
+        text: "Hey guys, I think I found a glue!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/hehjarona.mp3",
+        text: "Heh, it's my jarona!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/HEREICOME.mp3",
+        text: "HERE I COME SAN FRANDISCO!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/hey.mp3",
+        text: "Hey!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/heyboys.mp3",
+        text: "Hey, boys!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/heylilguy.mp3",
+        text: "Hey there, little guy!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/itsmeflowery.mp3",
+        text: "It's me, Flowery!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/mysterywind.mp3",
+        text: "mysterious wind"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/leafittome.mp3",
+        text: "Leaf it to me!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/sorrywaiting.mp3",
+        text: "Sorry to keep you waiting."
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/sorrywaitingalt.mp3",
+        text: "Sorry to keep you waiting!"
+    },
+        {
+        sound: "/perennial/audio/floweryvoice/flesh.mp3",
+        text: "They're eating my flesh!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/no.mp3",
+        text: "No, no, no!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/predictable.mp3",
+        text: "What a predictable creature!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/falling.mp3",
+        text: "I'm falling!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/dead.mp3",
+        text: "You're dead."
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/goodbye.mp3",
+        text: "Goodbye..."
+    },     {
+        sound: "/perennial/audio/floweryvoice/jarona1.mp3",
+        text: "Jarona!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/jarona2.mp3",
+        text: "Jarona!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/jarona3.mp3",
+        text: "Jarona!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/jarona4.mp3",
+        text: "Jarona!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/jaorangealt.mp3",
+        text: "Ja- orange!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/jaorangealt.mp3",
+        text: "Ja- orange!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/yes.mp3",
+        text: "Yes!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/takethat.mp3",
+        text: "Take that!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/thatsgreat.mp3",
+        text: "That's great!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/wow.mp3",
+        text: "Wow!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/sustingus.mp3",
+        text: "Sustingus!"
+    },
+    {
+        sound: "/perennial/audio/floweryvoice/glue.mp3",
+        text: "Glue!"
+    }
+]
+
+
+
 let currentJarona = new Audio('/perennial/audio/floweryvoice/foundglue.mp3')
 const flowery = document.getElementById("floweryimg")
 
 flowery.addEventListener('mousedown', () => {
-    currentJarona = new Audio(`${enterSounds[Math.floor(Math.random() * 11)]}`)
+    const line = allSounds[Math.floor(Math.random() * allSounds.length)]
+    currentJarona = new Audio(line.sound)
     currentJarona.cloneNode(true).play();
+    typeText(line.text)
+    drbox.style.display = "flex"
 })
+const drbox = document.getElementById("drtext")
+const box = document.getElementById("thetext")
+const flowertalk = new Audio("/perennial/audio/floweryvoice/flowertalk.mp3")
+
+function typeText(text) {
+    let speed = 35;
+    let currentText = 0;
+    let punctuation = [".", "?", "!", "-"]
+
+    function type() {
+        let speed = 35;
+        const currentChar = text[currentText - 1];
+        box.textContent = text.substring(0, ++currentText)
+        //flowertalk.play();
+        if (currentChar === ",") {speed = 300;}
+        if (punctuation.includes(currentChar)) {speed = 600;}
+
+
+        if (currentText === text.length) {return;}
+        setTimeout(type, speed)
+    }
+    type();
+}

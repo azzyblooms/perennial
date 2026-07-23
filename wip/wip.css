@@ -1,6 +1,10 @@
 html {
     overflow-y: scroll;
 }
+@font-face {
+    font-family: bit;
+    src: url(/perennial/bit.ttf);
+}
 body {
     background-color: rgb(201, 61, 126);
     color:white;
@@ -238,4 +242,50 @@ a {
 @keyframes move {
     0% {left:-5%}
     100% {left:105%}
+}
+#drtext {
+    justify-content: center;
+    align-items: center;
+    display:none;
+    width:593px;
+    height:167px;
+    position:fixed;
+    top:75%;
+    left:50%;
+    transform: translateX(-50%) scale(1.5);
+
+}
+#textboximg {
+    background-image: url(/perennial/deltarune/textbox.png/);
+    width:593px;
+    height:167px;
+    display:flex;
+    image-rendering: crisp-edges;
+
+}
+#floweryface {
+    width:70px;
+    height:120px;
+    position:absolute;
+    left:5%;
+    top:13%;
+}
+#thetext {
+    position:absolute;
+    font-family:bit;
+    font-size:40px;
+    top:10%;
+    left:27%;
+    height:120px;
+    width:400px;
+}
+#star {
+    position:absolute;
+    font-family:bit;
+    font-size:40px;
+    top:10%;
+    left:21%;
+}
+#glue {
+    color:red;
 }
