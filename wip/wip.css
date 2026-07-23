@@ -1,5 +1,6 @@
 html {
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 @font-face {
     font-family: bit;
@@ -227,10 +228,14 @@ a {
     position:absolute;
     image-rendering: crisp-edges;
     background: url(/perennial/images/flowery/flowerywalkcycle.png) no-repeat;
-    animation: 
-        walk 1s steps(1) infinite,
-        move 40s linear infinite;
     background-size:176px 122px;
+}
+.walking {
+    animation: 
+        walk 1s steps(1) infinite;
+}
+.pirouette {
+    animation: pirouette 0.3s steps(1) infinite;
 }
 @keyframes walk {
     0% {background-position-x:0px;}
@@ -239,9 +244,16 @@ a {
     75% {background-position-x:-132px;}
     100% {background-position-x:0px;}
 }
-@keyframes move {
-    0% {left:-5%}
-    100% {left:105%}
+@keyframes pirouette {
+    0% {background-position-x:0px;}
+    12.5% {background-position-x:-52.29px;}
+    25% {background-position-x:-104.57px;}
+    37.5% {background-position-x:-156.86px;}
+    50% {background-position-x:-201.4px;}
+    62.5% {background-position-x:-253.68px;}
+    75% {background-position-x:-305.97px;}
+    87.5% {background-position-x:-362.13;}
+    100% {background-position-x: 0px;}
 }
 #drtext {
     justify-content: center;

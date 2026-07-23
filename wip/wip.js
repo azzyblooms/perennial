@@ -155,7 +155,7 @@ const enterSounds = [
     },
     {
         sound: "/perennial/audio/floweryvoice/HEREICOME.mp3",
-        text: "HERE I COME SAN FRANDISCO!"
+        text: "HERE I COME, SAN FRANDISCO!"
     },
     {
         sound: "/perennial/audio/floweryvoice/hey.mp3",
@@ -317,9 +317,11 @@ const flowery = document.getElementById("floweryimg")
 flowery.addEventListener('mousedown', () => {
     const line = allSounds[Math.floor(Math.random() * allSounds.length)]
     currentJarona = new Audio(line.sound)
+    pirouette();
     currentJarona.cloneNode(true).play();
     typeText(line.text)
     drbox.style.display = "flex"
+    speed = 1;
 })
 const drbox = document.getElementById("drtext")
 const box = document.getElementById("thetext")
@@ -339,8 +341,50 @@ function typeText(text) {
         if (punctuation.includes(currentChar)) {speed = 600;}
 
 
-        if (currentText === text.length) {return;}
+        if (currentText === text.length) {walk(); return;}
         setTimeout(type, speed)
     }
     type();
 }
+
+let floweryx = -5;
+let speed = 0.05;
+let moving = true;
+
+function pirouette() {
+    flowery.classList.remove("walking")
+    moving = false;
+    flowery.classList.add("pirouette")
+    flowery.style.background = ("url(/perennial/images/flowery/pirouette.png/) no-repeat")
+    flowery.style.backgroundSize = ("418.29px 122px")
+    flowery.style.width = ("52.29px")
+    flowery.style.height = ("122px")
+}
+
+function walk() {
+    flowery.classList.remove("pirouette")
+    let speed = 0.5;
+    flowery.classList.add("walking")
+    moving = true;
+    flowery.style.background = ("url(/perennial/images/flowery/flowerywalkcycle.png/) no-repeat")
+    flowery.style.backgroundSize = ("176px 122px")
+    flowery.style.width = ("44px")
+    flowery.style.height = ("122px")
+}
+
+
+
+function update() {
+    if (moving) {
+        floweryx += speed;
+        if (floweryx >= 105) {
+            floweryx = -5
+            speed = 0.05
+        }
+        flowery.style.left = `${floweryx}%`
+    }
+
+    requestAnimationFrame(update)
+}
+
+update();
