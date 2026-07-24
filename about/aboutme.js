@@ -9,9 +9,11 @@ const hide = new Audio('/perennial/audio/Out.ogg')
 if(localStorage.getItem("briskets") === null) {
     localStorage.setItem("briskets", 0)
 }
-if(localStorage.getItem("contactbrisket") === null) {
-    localStorage.setItem("contactbrisket", 0)
+
+if(localStorage.getItem("aboutbrisket") === null) {
+    localStorage.setItem("aboutbrisket", 0)
 }
+let aboutbrisket = localStorage.getItem("aboutbrisket")
 dayjs.extend(window.dayjs_plugin_duration);
 dayjs.extend(window.dayjs_plugin_utc);
 
@@ -129,44 +131,77 @@ function goLeft() {
     updateImages();
     hoversound.cloneNode(true).play();
 }
+const facttext = document.getElementById("facttext");
 basket.addEventListener('mousedown', () => {
     clicksound.cloneNode(true).play();
     show.cloneNode(true).play();
     shader.style.zIndex = 5;
     ffwrap.style.opacity = 1;
     fact.style.opacity = 1;
-    const randomFact = facts[Math.floor(Math.random() * facts.length)]
-    fact.textContent = randomFact;
-    ffwrap.style.zIndex = 6;
-    ffwrap.style.animation = ("factenter 1s ease-in-out")
-    shader.style.opacity = 0.6;
-    setTimeout(() => {
-        shader.style.opacity = 0;
-        hide.cloneNode(true).play();
-        ffwrap.style.animation = ("factexit 1s ease-in-out")
+    if (factsviewed >= 10 && aboutbrisket == 0) {
+        if (factsviewed > 10) {
+            fact.style.transform = (`scale(${factsviewed / 9})`)
+        }
+        facttext.textContent = null;
+        brisket.textContent = "≽^-⩊-^≼";
+        brisket.style.display = "inline";
+        ffwrap.style.zIndex = 6;
+        ffwrap.style.animation = ("factenter2 1s ease-in-out")
+        shader.style.opacity = 0.6;
         setTimeout(() => {
-            shader.style.zIndex = -100;
-            ffwrap.style.zIndex = -100;
-            ffwrap.style.opacity = 0;
-            fact.style.opacity = 1;
-        }, 1000)
-    }, 3500)
+            shader.style.opacity = 0;
+            hide.cloneNode(true).play();
+            ffwrap.style.animation = ("factexit2 1s ease-in-out")
+            setTimeout(() => {
+                shader.style.zIndex = -100;
+                brisket.style.display = "none";
+                ffwrap.style.zIndex = -100;
+                ffwrap.style.opacity = 0;
+                fact.style.opacity = 1;
+            }, 1000)
+        }, 3500)
+    } else {
+        fact.style.transform = (`scale(1)`)
+        brisket.style.display = "none";
+        const randomFact = facts[Math.floor(Math.random() * facts.length)]
+        facttext.textContent = randomFact;
+        if (randomFact === facts[29]) {
+            facttext.style.color = "rgb(221, 91, 141)"
+        } else {
+            facttext.style.color = "rgb(0, 0, 0)"
+        }
+        ffwrap.style.zIndex = 6;
+        ffwrap.style.animation = ("factenter 1s ease-in-out")
+        shader.style.opacity = 0.6;
+        setTimeout(() => {
+            shader.style.opacity = 0;
+            hide.cloneNode(true).play();
+            ffwrap.style.animation = ("factexit 1s ease-in-out")
+            setTimeout(() => {
+                shader.style.zIndex = -100;
+                ffwrap.style.zIndex = -100;
+                ffwrap.style.opacity = 0;
+                fact.style.opacity = 1;
+            }, 1000)
+        }, 3500)
+    }
+    factsviewed++;
 })
 
 
-/*brisket.addEventListener('mouseenter', () => {
+brisket.addEventListener('mouseenter', () => {
     brisket.textContent = ("≽^•⩊•^≼")
 })
 brisket.addEventListener('mouseleave', () => {
     brisket.textContent = ("≽^-⩊-^≼")
 })
 brisket.addEventListener('mousedown', () => {
-    let contactbrisket = Number(localStorage.getItem("contactbrisket"))
+    let aboutbrisket = Number(localStorage.getItem("aboutbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
     brisket.textContent = "≽^•⩊-^≼";
     mew.preservesPitch = false;
     mew.playbackRate = 1.2;
-    if(contactbrisket == 1) {
+    if(aboutbrisket == 1) {
         clicksound.play();
     } else {
         mew.play();
@@ -179,13 +214,13 @@ brisket.addEventListener('mousedown', () => {
     }, 2350)
 })
 function presentBriskets() {
-    let contactbrisket = Number(localStorage.getItem("contactbrisket"))
+    let aboutbrisket = Number(localStorage.getItem("aboutbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
     brisketcounter.style.transition = ("transform ease-out 4s")
     brisketcounter.classList.add("showing")
     setTimeout(() => {
             catcollect.preservesPitch = false;
-            if(contactbrisket == 0) {
+            if(aboutbrisket == 0) {
                 if(briskets > 1) {
                 catcollect.playbackRate = (Math.sqrt(briskets) / 1.39)
             } else {
@@ -203,12 +238,12 @@ function presentBriskets() {
     }, 4500)
 }
 function brisketIncrease() {
-    let contactbrisket = Number(localStorage.getItem("contactbrisket"))
+    let aboutbrisket = Number(localStorage.getItem("aboutbrisket"))
     let briskets = Number(localStorage.getItem("briskets"))
-    if(contactbrisket == 0) {
+    if(aboutbrisket == 0) {
         briskets++;
-        contactbrisket = 1;
-        localStorage.setItem("contactbrisket", 1)
+        aboutbrisket = 1;
+        localStorage.setItem("aboutbrisket", 1)
         localStorage.setItem("briskets", briskets)
         brisketnumber.textContent = Number(localStorage.getItem("briskets"));
     }
@@ -221,15 +256,18 @@ document.addEventListener('keydown', (event) => {
         let likesbrisket = Number(localStorage.getItem("likesbrisket"))
         let inceptionbrisket = Number(localStorage.getItem("inceptionbrisket"))
         let projectbrisket = Number(localStorage.getItem("projectbrisket"))
+        let aboutbrisket = Number(localStorage.getItem("aboutbrisket"))
         let musicbrisket = Number(localStorage.getItem("musicbrisket"))
         musicbrisket = 0;
         projectbrisket = 0;
         inceptionbrisket = 0;
         likesbrisket = 0;
         contactbrisket = 0;
+        aboutbrisket = 0;
         briskets = 0;
         perrenialbrisket = 0;
         localStorage.setItem("perrenialbrisket", 0)
+        localStorage.setItem("aboutbrisket", 0)
         localStorage.setItem("contactbrisket", 0)
         localStorage.setItem("inceptionbrisket", 0)
         localStorage.setItem("likesbrisket", 0)
@@ -238,7 +276,7 @@ document.addEventListener('keydown', (event) => {
         localStorage.setItem("musicbrisket", 0)
         mew.play();
     }
-})*/
+})
 const weathernames = {
     "clear sky": "Sunny",
     "few clouds": "Partly Cloudy",
@@ -383,7 +421,7 @@ async function getTime() {
 getTime();
 setInterval(getTime, 1000);
 
-
+let factsviewed = 9;
 const facts = [
     "1. I saw Angine de Poitrine in concert.",
     "2. My favourite fruit is mango.",
@@ -397,7 +435,7 @@ const facts = [
     "10. I build extensions for instruments.",
     "11. I speak both English and French.",
     "12. My favourite song is Twilight by boa.",
-    "13. My favourite monster is the blue hawaiian.",
+    "13. My favourite monster is Ultra Blue Hawaiian.",
     "14. Pineapple belongs on pizza.",
     "15. My favourite season is summer.",
     "16. I don't like tea.",
@@ -414,5 +452,9 @@ const facts = [
     "27. If I can't be a music teacher, my backup is in computer science.",
     "28. Biology is my least favourite subject.",
     "29. I lowkey wanna figure out crypto (I HAVE GOOD REASONS! ITS FOR MY HEALTH!!!)",
-    "30. More facts coming soon!",
+    "30. My favourite colour is this one.",
+    "31. I am right handed.",
+    "32. I'm a night owl.",
+    "33. More facts coming soon!"
+
 ]

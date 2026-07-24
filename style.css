@@ -443,6 +443,7 @@ a {
     justify-content: center;
     justify-self: center;
     user-select: none;
+    z-index:200;
 }
 #brisket.sustingus {
     opacity:0;

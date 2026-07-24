@@ -190,15 +190,18 @@ document.addEventListener('keydown', (event) => {
         let likesbrisket = Number(localStorage.getItem("likesbrisket"))
         let inceptionbrisket = Number(localStorage.getItem("inceptionbrisket"))
         let projectbrisket = Number(localStorage.getItem("projectbrisket"))
+        let aboutbrisket = Number(localStorage.getItem("aboutbrisket"))
         let musicbrisket = Number(localStorage.getItem("musicbrisket"))
         musicbrisket = 0;
         projectbrisket = 0;
         inceptionbrisket = 0;
         likesbrisket = 0;
         contactbrisket = 0;
+        aboutbrisket = 0;
         briskets = 0;
         perrenialbrisket = 0;
         localStorage.setItem("perrenialbrisket", 0)
+        localStorage.setItem("aboutbrisket", 0)
         localStorage.setItem("contactbrisket", 0)
         localStorage.setItem("inceptionbrisket", 0)
         localStorage.setItem("likesbrisket", 0)
