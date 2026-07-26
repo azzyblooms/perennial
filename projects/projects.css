@@ -39,6 +39,7 @@ body {
         filter:hue-rotate(359deg)
     }
 }
+
 .tbgame {
     display:none;
 }
@@ -181,8 +182,8 @@ a {
 #briskethouse {
     position:absolute;
     top:300px;
-    left:-200px;
-    transition: left ease-in-out 3s;
+    left:-100px;
+    transition: left ease 1s;
 }
 #brisket {
     transition:transform ease-out 1s, opacity ease 1s;
@@ -195,14 +196,7 @@ a {
     opacity:0;
     transform: rotate(-75deg) translate(-40px, -130px);
 }
-@keyframes movin {
-    from {
-        left:-200px
-    }
-    to {
-        left:200px;
-    }
-}
+
 #majorproj {
     background-color: rgb(175, 42, 104);
     padding-bottom:30px;

@@ -54,7 +54,7 @@ const ddays = document.getElementById("days")
 const dhours = document.getElementById("hours")
 const dminutes = document.getElementById("minutes")
 const dseconds = document.getElementById("seconds")
-
+let safetycheck = 0;
 
 const BASE = window.location.hostname === "azzyblooms.github.io"
     ? "/perennial"
@@ -103,6 +103,9 @@ function updateCounter() {
 updateCounter();
 setInterval(updateCounter, 1000);
 
+const leftarrow = document.getElementById("leftarrow")
+const rightarrow = document.getElementById("rightarrow")
+
 document.addEventListener("DOMContentLoaded", () => {
     updateImages();
 })
@@ -115,6 +118,12 @@ document.addEventListener("keydown", (event) => {
     if(event.key === 'ArrowLeft' || event.key === 'a') {
         goLeft();
     }
+})
+rightarrow.addEventListener("mousedown", () => {
+    goRight();
+})
+document.addEventListener("mousedown", () => {
+    goLeft();
 })
 function updateImages() {
     docimg.forEach((img, index) => {
@@ -138,9 +147,9 @@ basket.addEventListener('mousedown', () => {
     shader.style.zIndex = 5;
     ffwrap.style.opacity = 1;
     fact.style.opacity = 1;
-    if (factsviewed >= 10 && aboutbrisket == 0) {
+    if (factsviewed >= 10 && aboutbrisket == 0 && safetycheck == 0) {
         if (factsviewed > 10) {
-            fact.style.transform = (`scale(${factsviewed / 9})`)
+            fact.style.transform = (`scale(${Math.pow((factsviewed / 9), 1.2)})`)
         }
         facttext.textContent = null;
         brisket.textContent = "≽^-⩊-^≼";
@@ -152,6 +161,7 @@ basket.addEventListener('mousedown', () => {
             shader.style.opacity = 0;
             hide.cloneNode(true).play();
             ffwrap.style.animation = ("factexit2 1s ease-in-out")
+            safetycheck = 1;
             setTimeout(() => {
                 shader.style.zIndex = -100;
                 brisket.style.display = "none";
@@ -268,6 +278,7 @@ document.addEventListener('keydown', (event) => {
         perrenialbrisket = 0;
         localStorage.setItem("perrenialbrisket", 0)
         localStorage.setItem("aboutbrisket", 0)
+        localStorage.setItem("aboutbrisket", aboutbrisket)
         localStorage.setItem("contactbrisket", 0)
         localStorage.setItem("inceptionbrisket", 0)
         localStorage.setItem("likesbrisket", 0)

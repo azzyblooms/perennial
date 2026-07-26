@@ -194,6 +194,7 @@ pb1image.addEventListener('mouseenter', () => {
 })
 pb1image.addEventListener('mouseleave', () => {
     briskethouse.classList.remove("moving")
+
 })
 
 pb2github.addEventListener('mousedown', () => {

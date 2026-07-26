@@ -40,58 +40,69 @@ const mailcontact = document.getElementById("mailcontact")
 const instacontact = document.getElementById("instacontact")
 const ytcontact = document.getElementById("ytcontact")
 
+let slacktrack = closed;
+let discordtrack = closed;
+let mailtrack = closed;
+let instatrack = closed;
+let yttrack = closed;
+
+
 slack.addEventListener('mousedown', () => {
     clicksound.cloneNode(true).play();
-    if(slackcontact.style.filter == "opacity(0)") {
-        slackcontact.style.filter = "opacity(1)"
+    if(slacktrack == closed) {
+        slackcontact.style.animation = ("unsquish 0.4s ease forwards")
         slacksound.cloneNode(true).play();
+        slacktrack = open;
     } else {
-        slackcontact.style.filter = "opacity(0)"
+        slackcontact.style.animation = ("squish 0.4s ease forwards")
+        slacktrack = closed;
     }
 })
 discord.addEventListener('mousedown', () => {
     clicksound.cloneNode(true).play();
-    if(discordcontact.style.filter == "opacity(0)") {
-        discordcontact.style.filter = "opacity(1)"
+    if(discordtrack == closed) {
+        discordcontact.style.animation = ("unsquish 0.4s ease forwards")
         discordsound.cloneNode(true).play();
+        discordtrack = open;
     } else {
-        discordcontact.style.filter = "opacity(0)"
+        discordcontact.style.animation = ("squish 0.4s ease forwards")
+        discordtrack = closed;
     }
 })
 mail.addEventListener('mousedown', () => {
     clicksound.cloneNode(true).play();
-    if(mailcontact.style.filter == "opacity(0)") {
-        mailcontact.style.filter = "opacity(1)"
+    if(mailtrack == closed) {
+        mailcontact.style.animation = ("unsquish 0.4s ease forwards")
         mailsound.cloneNode(true).play();
+        mailtrack = open;
     } else {
-        mailcontact.style.filter = "opacity(0)"
+        mailcontact.style.animation = ("squish 0.4s ease forwards")
+        mailtrack = closed;
     }
 })
 insta.addEventListener('mousedown', () => {
     clicksound.cloneNode(true).play();
-    if(instacontact.style.filter == "opacity(0)") {
-        instacontact.style.filter = "opacity(1)"
+    if(instatrack == closed) {
+        instacontact.style.animation = ("unsquish 0.4s ease forwards")
         instasound.cloneNode(true).play();
+        instatrack = open;
     } else {
-        instacontact.style.filter = "opacity(0)"
+        instacontact.style.animation = ("squish 0.4s ease forwards")
+        instatrack = closed;
     }
 })
 yt.addEventListener('mousedown', () => {
     clicksound.cloneNode(true).play();
-    if(ytcontact.style.filter == "opacity(0)") {
-        ytcontact.style.filter = "opacity(1)"
+    if(yttrack == closed) {
+        ytcontact.style.animation = ("unsquish 0.4s ease forwards")
         ytsound.cloneNode(true).play();
+        yttrack = open;
     } else {
-        ytcontact.style.filter = "opacity(0)"
+        ytcontact.style.animation = ("squish 0.4s ease forwards")
+        yttrack = closed;
     }
 })
-document.addEventListener('DOMContentLoaded', () => {
-    slackcontact.style.filter = "opacity(0)";
-    discordcontact.style.filter = "opacity(0)";
-    mailcontact.style.filter = "opacity(0)";
-    instacontact.style.filter = "opacity(0)";
-    ytcontact.style.filter = "opacity(0)";
-})
+
 
 const BASE = window.location.hostname === "azzyblooms.github.io"
     ? "/perennial"
