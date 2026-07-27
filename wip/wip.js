@@ -21,7 +21,6 @@ const tblik = document.getElementById("tblik")
 const tbabt = document.getElementById("tbabt")
 const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
-const tbmisc = document.getElementById("tbmisc")
 
 
 
@@ -37,7 +36,7 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
-tbmisc.addEventListener('mousedown', () => go("/wip/"))
+
 
 document.addEventListener('keydown', (event) => {
     if(event.key === "b") {

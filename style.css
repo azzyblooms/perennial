@@ -74,14 +74,6 @@ body {
     75% {transform:scale(1.2) translateY(-82px);}
     100% {transform:scale(1.2) translateY(-84px);}
 }
-@keyframes miscwiggle {
-    0% {transform:scale(1.2) translateY(-154px) rotate(-60deg);}
-    25% {transform:scale(1.2) translateY(-154px) rotate(-70deg);}
-    50% {transform:scale(1.2) translateY(-154px) rotate(-80deg);}
-    75% {transform:scale(1.2) translateY(-154px) rotate(-90deg);}
-    100% {transform:scale(1.2) translateY(-154px) rotate(-100deg);}
-}
-
 .muswiggle {
     animation: muswiggle 0.34s infinite;
 }
@@ -96,9 +88,6 @@ body {
 }
 .contactwiggle {
     animation: contactwiggle 0.34s infinite;
-}
-.miscwiggle {
-    animation: miscwiggle 0.34s infinite;
 }
 #cooltext1 {
     transform:translateY(-80px);
@@ -507,7 +496,7 @@ a {
     height:50px;
     transition:transform ease 200ms;
     margin-top:-50px;
-    margin-left:125px;
+    margin-left:155px;
     transform:translateY(-174px);
 }
 #mebutton {
@@ -517,7 +506,7 @@ a {
     height:100px;
     transition:transform ease 200ms;
     margin-top:-50px;
-    margin-left:170px;
+    margin-left:200px;
     transform:translateY(-75px);
 }
 #projectbutton {
@@ -527,7 +516,7 @@ a {
     height:50px;
     transition:transform ease 200ms;
     margin-top:-50px;
-    margin-left:255px;
+    margin-left:295px;
     transform:translateY(-162px);
 }
 #contactbutton {
@@ -537,24 +526,12 @@ a {
     height:50px;
     transition:transform ease 200ms;
     margin-top:-50px;
-    margin-left:320px;
+    margin-left:365px;
     transform:translateY(-100px);
 }
-#miscbutton {
-    background-image:url(images/cog.png);
-    background-size:50px;
-    width:50px;
-    height:50px;
-    transition:transform ease 200ms;
-    margin-top:-50px;
-    margin-left:400px;
-    transform:translateY(-185px) rotate(30deg);
-}
+
 #likebutton:hover {
     transform:scale(1.2) translateY(-145px);
-}
-#miscbutton:hover {
-    transform:scale(1.2) translateY(-154px) rotate(-60deg);
 }
 #contactbutton:hover {
     transform:scale(1.2) translateY(-84px);

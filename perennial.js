@@ -3,7 +3,6 @@ const likebutton = document.getElementById("likebutton");
 const mebutton = document.getElementById("mebutton");
 const projectbutton = document.getElementById("projectbutton");
 const contactbutton = document.getElementById("contactbutton");
-const miscbutton = document.getElementById("miscbutton");
 const cooltext1 = document.getElementById("cooltext1");
 const brisket = document.getElementById("brisket");
 const brisketcounter = document.getElementById("brisketcounter")
@@ -28,7 +27,6 @@ const tblik = document.getElementById("tblik")
 const tbabt = document.getElementById("tbabt")
 const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
-const tbmisc = document.getElementById("tbmisc")
 
 const BASE = window.location.hostname === "azzyblooms.github.io"
     ? "/perennial"
@@ -42,7 +40,6 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
-tbmisc.addEventListener('mousedown', () => go("/wip/"))
 
 musicbutton.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();
@@ -60,15 +57,6 @@ likebutton.addEventListener('mouseenter', () => {
 })
 likebutton.addEventListener('mouseleave', () => {
     likebutton.classList.remove("likewiggle");
-    cooltext1.textContent = ("------------------")
-})
-miscbutton.addEventListener('mouseenter', () => {
-    hoversound.cloneNode(true).play();
-    miscbutton.classList.add("miscwiggle");
-    cooltext1.textContent = ("misc")
-})
-miscbutton.addEventListener('mouseleave', () => {
-    miscbutton.classList.remove("miscwiggle");
     cooltext1.textContent = ("------------------")
 })
 contactbutton.addEventListener('mouseenter', () => {
@@ -106,10 +94,6 @@ projectbutton.addEventListener('mousedown', () => {
     clicksound.play();
     go("/projects/")
 })
-miscbutton.addEventListener('mousedown', () => {
-    clicksound.play();
-    go("/wip/")
-})
 contactbutton.addEventListener('mousedown', () => {
     clicksound.play();
     go("/contacts/")
@@ -120,7 +104,7 @@ likebutton.addEventListener('mousedown', () => {
 })
 mebutton.addEventListener('mousedown', () => {
     clicksound.play();
-    window.location.href = "http://127.0.0.1:3000/404.html"
+    go("/about/")
 })
 brisket.addEventListener('mouseenter', () => {
     brisket.textContent = "≽^•⩊•^≼";

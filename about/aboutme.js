@@ -2,6 +2,7 @@
 const hoversound = new Audio('/perennial/audio/hover.mp3')
 const clicksound = new Audio('/perennial/audio/click2.mp3')
 const catcollect = new Audio('/perennial/audio/catcollect.wav')
+const boom = new Audio('/perennial/audio/boom.mp3')
 const mew = new Audio('/perennial/audio/mew.wav')
 const whoop = new Audio('/perennial/audio/snd_slidewhist.wav')
 const show = new Audio('/perennial/audio/In.ogg')
@@ -25,7 +26,6 @@ const tblik = document.getElementById("tblik")
 const tbabt = document.getElementById("tbabt")
 const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
-const tbmisc = document.getElementById("tbmisc")
 const brisket = document.getElementById("brisket")
 const docage = document.getElementById("age")
 const basket = document.getElementById("funfactbasket")
@@ -47,6 +47,16 @@ const img5 = document.getElementById("outphotoright")
 
 const images = [1, 2, 3, 4, 5, 6, 7];
 const docimg = [img1, img2, img3, img4, img5];
+const subtitles = {
+    "1": "this is a placeholder! image #1",
+    "2": "this is a placeholder! image #2",
+    "3": "this is a placeholder! image #3",
+    "4": "this is a placeholder! image #4",
+    "5": "this is an alto saxophone.",
+    "6": "this is a placeholder! image #6",
+    "7": "this is a placeholder! image #7",
+}
+const subtitletext = document.getElementById("photocaption")
 
 const dyears = document.getElementById("years")
 const dmonths = document.getElementById("months")
@@ -68,7 +78,6 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
-tbmisc.addEventListener('mousedown', () => go("/wip/"))
 
 const birthdate = dayjs("2010-02-03T07:52:00");
 
@@ -122,12 +131,13 @@ document.addEventListener("keydown", (event) => {
 rightarrow.addEventListener("mousedown", () => {
     goRight();
 })
-document.addEventListener("mousedown", () => {
+leftarrow.addEventListener("mousedown", () => {
     goLeft();
 })
 function updateImages() {
     docimg.forEach((img, index) => {
         img.src = `/perennial/images/gallery/${images[index]}.png`;
+        subtitletext.textContent = subtitles[images[2]];
     });
 }
 function goRight() {
@@ -196,6 +206,22 @@ basket.addEventListener('mousedown', () => {
         }, 3500)
     }
     factsviewed++;
+})
+
+const bob = document.getElementById("boowomp")
+const unemployed = document.getElementById("eltestito")
+const boowomp = new Audio('/perennial/audio/boowomp.mp3/')
+eltestito.addEventListener('mousedown', () => {
+    boowomp.cloneNode(true).play();
+    boom.cloneNode(true).play();
+    bob.style.display = ("inline")
+    bob.style.animation = ("flingin 1s ease forwards")
+    setTimeout(() => {
+        bob.style.animation = ("fadeout 1s ease forwards")
+        setTimeout(() => {
+            bob.style.display = ("none")
+        }, 1000)
+    }, 1000)
 })
 
 

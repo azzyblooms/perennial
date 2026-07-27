@@ -20,7 +20,6 @@ const tblik = document.getElementById("tblik")
 const tbabt = document.getElementById("tbabt")
 const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
-const tbmisc = document.getElementById("tbmisc")
 const brisket = document.getElementById("brisket")
 const briskethouse = document.getElementById("briskethouse")
 const pb1github = document.getElementById("pb1github")
@@ -170,7 +169,6 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
-tbmisc.addEventListener('mousedown', () => go("/wip/"))
 
 
 

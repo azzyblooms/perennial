@@ -21,7 +21,6 @@ const tblik = document.getElementById("tblik")
 const tbabt = document.getElementById("tbabt")
 const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
-const tbmisc = document.getElementById("tbmisc")
 const brisket = document.getElementById("brisket")
 const briskethouse = document.getElementById("briskethouse")
 const spiral = document.getElementById("spiral")
@@ -39,7 +38,6 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
-tbmisc.addEventListener('mousedown', () => go("/wip/"))
 
 brisket.addEventListener('mousedown', () => {
     let inceptionbrisket = Number(localStorage.getItem("inceptionbrisket"))
@@ -64,7 +62,6 @@ brisket.addEventListener('mousedown', () => {
         tbabt.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg) translateY(${Math.random() * 15}px)`;
         tbproj.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg) translateY(${Math.random() * 15})`;
         tbcon.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg) translateY(${Math.random() * 15}px)`;
-        tbmisc.style.transform = `rotate(${(Math.random() - 0.5) * 30}deg) translateY(${Math.random() * 15}spx)`;
         tb.classList.add("tbb")
         setTimeout(() => {
             document.body.classList.remove("shaking")
