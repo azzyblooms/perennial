@@ -357,7 +357,7 @@ function pirouette() {
     flowery.classList.remove("walking")
     moving = false;
     flowery.classList.add("pirouette")
-    flowery.style.background = ("url(/perennial/images/flowery/pirouette.png/) no-repeat")
+    flowery.style.background = ("url(/perennial/images/flowery/pirouette.png) no-repeat")
     flowery.style.backgroundSize = ("418.29px 122px")
     flowery.style.width = ("52.29px")
     flowery.style.height = ("122px")
@@ -368,7 +368,7 @@ function walk() {
     let speed = 0.5;
     flowery.classList.add("walking")
     moving = true;
-    flowery.style.background = ("url(/perennial/images/flowery/flowerywalkcycle.png/) no-repeat")
+    flowery.style.background = ("url(/perennial/images/flowery/flowerywalkcycle.png) no-repeat")
     flowery.style.backgroundSize = ("176px 122px")
     flowery.style.width = ("44px")
     flowery.style.height = ("122px")

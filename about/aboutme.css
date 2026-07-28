@@ -126,6 +126,7 @@ a {
     color:rgb(197, 115, 186)
 }
 #aboutmebox1 {
+    margin-top:40px;
     display:flex;
     flex-direction: column;
     border:4px solid white;

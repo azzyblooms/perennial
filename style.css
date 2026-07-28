@@ -488,6 +488,7 @@ a {
     height:200px;
     transition:transform ease 200ms;
     margin-top:30px;
+    cursor:pointer;
 }
 #likebutton {
     background-image:url(images/heart.png);
@@ -498,6 +499,7 @@ a {
     margin-top:-50px;
     margin-left:155px;
     transform:translateY(-174px);
+    cursor:pointer;
 }
 #mebutton {
     background-image:url(images/litme.png);
@@ -508,6 +510,7 @@ a {
     margin-top:-50px;
     margin-left:200px;
     transform:translateY(-75px);
+    cursor:pointer;
 }
 #projectbutton {
     background-image:url(images/floppy.png);
@@ -518,6 +521,7 @@ a {
     margin-top:-50px;
     margin-left:295px;
     transform:translateY(-162px);
+    cursor:pointer;
 }
 #contactbutton {
     background-image:url(images/contacts.png);
@@ -528,6 +532,7 @@ a {
     margin-top:-50px;
     margin-left:365px;
     transform:translateY(-100px);
+    cursor:pointer;
 }
 
 #likebutton:hover {

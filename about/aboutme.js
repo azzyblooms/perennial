@@ -210,7 +210,7 @@ basket.addEventListener('mousedown', () => {
 
 const bob = document.getElementById("boowomp")
 const unemployed = document.getElementById("eltestito")
-const boowomp = new Audio('/perennial/audio/boowomp.mp3/')
+const boowomp = new Audio('/perennial/audio/boowomp.mp3')
 eltestito.addEventListener('mousedown', () => {
     boowomp.cloneNode(true).play();
     boom.cloneNode(true).play();

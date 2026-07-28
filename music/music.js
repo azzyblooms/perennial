@@ -35,12 +35,12 @@ const cto = document.getElementById("cto")
 const cbc = document.getElementById("cbc")
 const clo = document.getElementById("clo")
 const mal = document.getElementById("mal")
-
 const pno = document.getElementById("pno")
 const bsx = document.getElementById("bsx")
 const eup = document.getElementById("eup")
 const clt = document.getElementById("clt")
 const tbn = document.getElementById("tbn")
+const images = document.querySelectorAll(".clarimg, .otherimg")
 
 const tbper = document.getElementById("tbper")
 const tbmus = document.getElementById("tbmus")
@@ -111,11 +111,11 @@ asx.addEventListener('mouseleave', () => {
     ihover.textContent = ("and many more!")
 })
 
-cto.addEventListener('mouseenter', () => {
-    ihover.textContent = ("contralto clarinet")
+tbn.addEventListener('mouseenter', () => {
+    ihover.textContent = ("trombone")
     hoversound.cloneNode(true).play();
 })
-cto.addEventListener('mouseleave', () => {
+tbn.addEventListener('mouseleave', () => {
     ihover.textContent = ("and many more!")
 })
 
@@ -153,8 +153,12 @@ closeside.addEventListener('mouseenter', () => {
 pno.addEventListener('mousedown', () => {
         if(ititbox.textContent == ("piano") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        pno.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         pno.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/piano.png")
         ititbox.textContent = ("piano")
@@ -167,8 +171,12 @@ pno.addEventListener('mousedown', () => {
 bsx.addEventListener('mousedown', () => {
         if(ititbox.textContent == ("baritone sax") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        bsx.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         bsx.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/bari.png")
         ititbox.textContent = ("baritone sax")
@@ -181,8 +189,12 @@ bsx.addEventListener('mousedown', () => {
 eup.addEventListener('mousedown', () => {
         if(ititbox.textContent == ("euphonium") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        eup.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         eup.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/euph.png")
         ititbox.textContent = ("euphonium")
@@ -195,8 +207,12 @@ eup.addEventListener('mousedown', () => {
 clt.addEventListener('mousedown', () => {
         if(ititbox.textContent == ("clarinet") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        clt.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         clt.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/clarinet.png")
         ititbox.textContent = ("clarinet")
@@ -209,13 +225,17 @@ clt.addEventListener('mousedown', () => {
 tbn.addEventListener('mousedown', () => {
         if(ititbox.textContent == ("trombone") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        tbn.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         tbn.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/tbn.png")
         ititbox.textContent = ("trombone")
         doodlecat.style.display = ("none")
-        abtyap.textContent = ("probably my least played instrument i'd say i'm somewhat proficient at. i played it for most of grade 7 band, and was pretty alright, i guess!! again, nothing really special. i liked the trombone until i found out i had to hold it UP and then poor baby azzy couldn't handle having an instrument on her shoulder so i quit 💀 but hey! i'm coming back to it for a duet too!!! and who knows, i might have to do it for jazz band next year if i cant get a spot on the bari sax 😓")
+        abtyap.textContent = ("my first wind instrument! i played it for most of grade 7 band, and was pretty alright, i guess!! i liked the trombone until i found out i had to hold it UP and then poor baby azzy couldn't handle having an instrument on her shoulder so i quit 💀 i still play occasionally when my friend lets me borrow his :D")
         clicksound.cloneNode(true).play();
         showSide();
     }
@@ -223,8 +243,12 @@ tbn.addEventListener('mousedown', () => {
 flt.addEventListener('mousedown', () => {
         if(ititbox.textContent == ("trombone") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        flt.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         flt.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/flt.png")
         ititbox.textContent = ("flute")
@@ -237,8 +261,12 @@ flt.addEventListener('mousedown', () => {
 bcl.addEventListener('mousedown', () => {
         if(ititbox.textContent == ("bass clarinet") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        bcl.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         bcl.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/bcl.png")
         ititbox.textContent = ("bass clarinet")
@@ -251,8 +279,12 @@ bcl.addEventListener('mousedown', () => {
 cbc.addEventListener('mousedown', () => {
         if(ititbox.textContent == ("contrabass clarinet") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        cbc.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         cbc.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/cbc.png")
         ititbox.textContent = ("contrabass clarinet")
@@ -265,8 +297,12 @@ cbc.addEventListener('mousedown', () => {
 acc.addEventListener('mousedown', () => {
         if(ititbox.textContent == ("accordion") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        acc.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         acc.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/acc.png")
         ititbox.textContent = ("accordion")
@@ -279,8 +315,12 @@ acc.addEventListener('mousedown', () => {
 asx.addEventListener('mousedown', () => {
         if(ititbox.textContent == ("alto sax") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        asx.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         asx.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/asx.png")
         ititbox.textContent = ("alto sax")
@@ -291,14 +331,18 @@ asx.addEventListener('mousedown', () => {
     }
 })
 cto.addEventListener('mousedown', () => {
-        if(ititbox.textContent == ("contralto clarinet") && sidebox.style.display !== ("none")) {
+        if(ititbox.textContent == ("contra-alto clarinet") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        cto.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         cto.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/cto.png")
-        ititbox.textContent = ("contralto clarinet")
-        abtyap.textContent = ("my wonderful son. this is my BABY. i am so lucky our school has basically the best model of contralto out there!!! since i cant borrow the contrabass he let me try the contralto, and its been amazing!!! its so awesome to play low niche instruments #lowreedsupremacy")
+        ititbox.textContent = ("contra-alto clarinet")
+        abtyap.textContent = ("my wonderful son. this is my BABY. i am so lucky our school has basically the best model of contra-alto out there!!! since i cant borrow the contrabass he let me try the contra-alto, and its been amazing!!! its so awesome to play low niche instruments #lowreedsupremacy")
         clicksound.cloneNode(true).play();
         doodlecat.style.display = ("flex")
         showSide();
@@ -307,8 +351,12 @@ cto.addEventListener('mousedown', () => {
 tpt.addEventListener('mousedown', () => {
         if(ititbox.textContent == ("trumpet") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        tpt.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         tpt.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/tpt.png")
         ititbox.textContent = ("trumpet")
@@ -321,8 +369,12 @@ tpt.addEventListener('mousedown', () => {
 clo.addEventListener('mousedown', () => {
         if(ititbox.textContent == ("cello") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        clo.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         clo.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/clo.png")
         ititbox.textContent = ("cello")
@@ -335,8 +387,12 @@ clo.addEventListener('mousedown', () => {
 mal.addEventListener('mousedown', () => {
     if(ititbox.textContent == ("mallets") && sidebox.style.display !== ("none")) {
         clicksound.cloneNode(true).play();
+        mal.style.borderColor = ("white")
         hideSide();
     } else {
+        images.forEach(clarimg => {
+            clarimg.style.borderColor = ("white");
+        })
         mal.style.borderColor = ("rgb(192, 192, 192)")
         abttsimg.src = ("/perennial/images/mal.png")
         ititbox.textContent = ("mallets")

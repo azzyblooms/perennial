@@ -136,6 +136,7 @@ html {
 .contactbox {
     display:block;
     padding:25px;
+    cursor:pointer;
     transition:transform ease 300ms;
 }
 #contactinterface {
