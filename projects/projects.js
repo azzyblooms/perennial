@@ -109,7 +109,8 @@ majorbox.addEventListener('mousedown', () => {
     if(!overbox) {
         open = !open;
         if(open) {
-            boom.play();
+            boom.cloneNode(true).play();
+            clicksound.cloneNode(true).play();
             majorbox.style.paddingBottom = ("40px")
             b1.style.display = ("flex")
             b2.style.display = ("flex")
@@ -143,7 +144,8 @@ minorbox.addEventListener('mousedown', () => {
         if(mopen) {
             smallboom.preservesPitch = false;
             smallboom.playbackRate = 1.2;
-            smallboom.play();
+            clicksound.cloneNode(true).play();
+            smallboom.cloneNode(true).play();
             minorbox.style.paddingBottom = ("30px")
             mb1.style.display = ("flex")
             mb2.style.display = ("flex")

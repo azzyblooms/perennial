@@ -195,3 +195,138 @@ document.addEventListener('keydown', (event) => {
         mew.play();
     }
 })
+
+const bandtab = document.getElementById("bandtab")
+const contenttab = document.getElementById("contenttab")
+const buildtab = document.getElementById("buildtab")
+const comptab = document.getElementById("comptab")
+const pageturn = new Audio("/perennial/audio/turnpage.mp3")
+const compfile = new Audio("/perennial/audio/composition.mp3")
+
+const tabbox = document.getElementById("tabbox")
+const tabtitle = document.getElementById("tabtitle")
+const tabimg = document.getElementById("tabimg")
+const tabyap = document.getElementById("tabyap")
+const bottomimg1 = document.getElementById("bottomimg1")
+const bottomimg2 = document.getElementById("bottomimg2")
+
+const bandcolour = "rgb(211, 107, 194)";
+const bandcolouralt = "rgb(150, 66, 136)";
+const contentcolour = "rgb(214, 77, 118)";
+const contentcolouralt = "rgb(150, 66, 91)";
+const buildcolour = "rgb(212, 129, 73)";
+const buildcolouralt = "rgb(150, 100, 66)";
+const compcolour = "rgb(87, 170, 224)";
+const compcolouralt = "rgb(66, 116, 150)";
+
+
+
+
+
+bandtab.addEventListener('mousedown', () => {
+    bandtab.style.backgroundColor = (`${bandcolour}`);
+    contenttab.style.backgroundColor = (`${contentcolouralt}`);
+    buildtab.style.backgroundColor = (`${buildcolouralt}`);
+    comptab.style.backgroundColor = (`${compcolouralt}`);
+    tabbox.style.backgroundColor = (`${bandcolour}`);
+    tabtitle.style.backgroundColor = (`${bandcolouralt}`);
+    tabyap.style.backgroundColor = (`${bandcolouralt}`)
+    pageturn.cloneNode(true).play();
+    clicksound.cloneNode(true).play();
+
+    bandtab.style.borderBottom = ("none")
+    contenttab.style.borderBottom = ("4px solid white")
+    buildtab.style.borderBottom = ("4px solid white")
+    comptab.style.borderBottom = ("4px solid white")
+
+
+    tabyap.textContent = ("i am part of the senior concert band at my high school! we perform major shows multiple times each year along with some smaller performances scattered in between. if you're in ottawa, come see us!!")
+    tabimg.src = ("/perennial/images/azzy.png");
+    tabimg.style.borderRadius = ("5px");
+    tabtitle.textContent = ("CONCERT BAND")
+    bottomimg1.src = ("/perennial/images/azzy.png");
+    bottomimg2.src = ("/perennial/images/azzy.png");
+
+})
+contenttab.addEventListener('mousedown', () => {
+    contenttab.style.backgroundColor = (`${contentcolour}`);
+    bandtab.style.backgroundColor = (`${bandcolouralt}`);
+    buildtab.style.backgroundColor = (`${buildcolouralt}`);
+    comptab.style.backgroundColor = (`${compcolouralt}`);
+    tabbox.style.backgroundColor = (`${contentcolour}`);
+    tabtitle.style.backgroundColor = (`${contentcolouralt}`);
+    tabyap.style.backgroundColor = (`${contentcolouralt}`)
+    pageturn.cloneNode(true).play();
+    clicksound.cloneNode(true).play();
+
+    bandtab.style.borderBottom = ("4px solid white")
+    contenttab.style.borderBottom = ("none")
+    buildtab.style.borderBottom = ("4px solid white")
+    comptab.style.borderBottom = ("4px solid white")
+
+    tabyap.textContent = ("i upload content for fun on my youtube and instagram accounts! i mostly make music content and practice videos, but tbh i'll just post whatever i feel like 😭😭😭 check out my contacts page to learn more!")
+    tabimg.src = ("/perennial/images/azzy.png");
+    tabimg.style.borderRadius = ("5px");
+    tabtitle.textContent = ("MY CONTENT")
+    bottomimg1.src = ("/perennial/images/azzy.png");
+    bottomimg2.src = ("/perennial/images/azzy.png");
+})
+buildtab.addEventListener('mousedown', () => {
+    buildtab.style.backgroundColor = (`${buildcolour}`);
+    contenttab.style.backgroundColor = (`${contentcolouralt}`);
+    bandtab.style.backgroundColor = (`${bandcolouralt}`);
+    comptab.style.backgroundColor = (`${compcolouralt}`);
+    tabbox.style.backgroundColor = (`${buildcolour}`);
+    tabtitle.style.backgroundColor = (`${buildcolouralt}`);
+    tabyap.style.backgroundColor = (`${buildcolouralt}`)
+    pageturn.cloneNode(true).play();
+    clicksound.cloneNode(true).play();
+
+    bandtab.style.borderBottom = ("4px solid white")
+    contenttab.style.borderBottom = ("4px solid white")
+    buildtab.style.borderBottom = ("none")
+    comptab.style.borderBottom = ("4px solid white")
+
+    tabyap.textContent = ("i do actually like hardware and engineering, just not when it's coding! i like to build contraptions and doohickeys with random stuff. i really want to get into 3d printing, and i'm working on a 3d printable contra-alto clarinet extension!")
+    tabimg.src = ("/perennial/images/azzy.png");
+    tabimg.style.borderRadius = ("5px");
+    tabtitle.textContent = ("CREATIONS")
+    bottomimg1.src = ("/perennial/images/azzy.png");
+    bottomimg2.src = ("/perennial/images/azzy.png");
+})
+comptab.addEventListener('mousedown', () => {
+    buildtab.style.backgroundColor = (`${buildcolouralt}`);
+    contenttab.style.backgroundColor = (`${contentcolouralt}`);
+    bandtab.style.backgroundColor = (`${bandcolouralt}`);
+    comptab.style.backgroundColor = (`${compcolour}`);
+    tabbox.style.backgroundColor = (`${compcolour}`);
+    tabtitle.style.backgroundColor = (`${compcolouralt}`);
+    tabyap.style.backgroundColor = (`${compcolouralt}`)
+    pageturn.cloneNode(true).play();
+    clicksound.cloneNode(true).play();
+
+    bandtab.style.borderBottom = ("4px solid white")
+    contenttab.style.borderBottom = ("4px solid white")
+    buildtab.style.borderBottom = ("4px solid white")
+    comptab.style.borderBottom = ("none")
+
+    tabyap.textContent = ("in addition to music performance, i also dabble in composing. i mostly write/arrange for small groups, like sax or clarinet choir, but i'm experimenting with writing a fully orchestrated band piece sometime soon!")
+    tabimg.src = ("/perennial/images/vinyl.png");
+    tabimg.style.borderRadius = ("125px");
+    tabtitle.textContent = ("COMPOSITION")
+    bottomimg1.src = ("/perennial/images/azzy.png");
+    bottomimg2.src = ("/perennial/images/azzy.png");
+})
+tabimg.addEventListener('mousedown', () => {
+    if(tabimg.style.borderRadius === ("125px")) {
+        tabimg.style.animation = ("spin 4s linear forwards infinite")
+        if(compfile.paused) {
+            compfile.play();
+            tabimg.style.animationPlayState = ("running")
+        } else {
+            compfile.pause();
+            tabimg.style.animationPlayState = ("paused")
+        }
+        clicksound.cloneNode(true).play();
+    }
+})

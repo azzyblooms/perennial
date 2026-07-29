@@ -66,10 +66,17 @@ yapincoming.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();
 })
 yapincoming.addEventListener('mousedown', () => {
-    boom.play();
-    musicboxes.style.boxShadow = ("5px 5px 10px 2px rgba(0,0,0,0.3);")
-    musicbigbox.style.display = ("block");
+    clicksound.cloneNode(true).play();
+    if(musicbigbox.style.display == ("block")) {
+        musicboxes.style.boxShadow = ("")
+        musicbigbox.style.display = ("none");
+    } else {
+        boom.cloneNode(true).play();
+        musicboxes.style.boxShadow = ("5px 5px 10px 2px rgba(0,0,0,0.3);")
+        musicbigbox.style.display = ("block");
+    }
 })
+
 
 flt.addEventListener('mouseenter', () => {
     ihover.textContent = ("flute")
