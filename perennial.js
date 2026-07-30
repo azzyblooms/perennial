@@ -25,6 +25,7 @@ const tbper = document.getElementById("tbper")
 const tbmus = document.getElementById("tbmus")
 const tblik = document.getElementById("tblik")
 const tbabt = document.getElementById("tbabt")
+const tbblog = document.getElementById("tbblog")
 const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
 
@@ -40,6 +41,7 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
+tbblog.addEventListener('mousedown', () => go("/blog/"))
 
 musicbutton.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();
@@ -238,8 +240,9 @@ bandtab.addEventListener('mousedown', () => {
     contenttab.style.borderBottom = ("4px solid white")
     buildtab.style.borderBottom = ("4px solid white")
     comptab.style.borderBottom = ("4px solid white")
+    tabimg.style.animation = ("none");
 
-
+    compfile.pause();
     tabyap.textContent = ("i am part of the senior concert band at my high school! we perform major shows multiple times each year along with some smaller performances scattered in between. if you're in ottawa, come see us!!")
     tabimg.src = ("/perennial/images/azzy.png");
     tabimg.style.borderRadius = ("5px");
@@ -263,11 +266,12 @@ contenttab.addEventListener('mousedown', () => {
     contenttab.style.borderBottom = ("none")
     buildtab.style.borderBottom = ("4px solid white")
     comptab.style.borderBottom = ("4px solid white")
-
+    compfile.pause();
     tabyap.textContent = ("i upload content for fun on my youtube and instagram accounts! i mostly make music content and practice videos, but tbh i'll just post whatever i feel like 😭😭😭 check out my contacts page to learn more!")
     tabimg.src = ("/perennial/images/azzy.png");
     tabimg.style.borderRadius = ("5px");
     tabtitle.textContent = ("MY CONTENT")
+    tabimg.style.animation = ("none");
     bottomimg1.src = ("/perennial/images/azzy.png");
     bottomimg2.src = ("/perennial/images/azzy.png");
 })
@@ -286,10 +290,11 @@ buildtab.addEventListener('mousedown', () => {
     contenttab.style.borderBottom = ("4px solid white")
     buildtab.style.borderBottom = ("none")
     comptab.style.borderBottom = ("4px solid white")
-
+    compfile.pause();
     tabyap.textContent = ("i do actually like hardware and engineering, just not when it's coding! i like to build contraptions and doohickeys with random stuff. i really want to get into 3d printing, and i'm working on a 3d printable contra-alto clarinet extension!")
     tabimg.src = ("/perennial/images/azzy.png");
     tabimg.style.borderRadius = ("5px");
+    tabimg.style.animation = ("none");
     tabtitle.textContent = ("CREATIONS")
     bottomimg1.src = ("/perennial/images/azzy.png");
     bottomimg2.src = ("/perennial/images/azzy.png");
@@ -304,6 +309,8 @@ comptab.addEventListener('mousedown', () => {
     tabyap.style.backgroundColor = (`${compcolouralt}`)
     pageturn.cloneNode(true).play();
     clicksound.cloneNode(true).play();
+    tabimg.style.animation = ("none");
+
 
     bandtab.style.borderBottom = ("4px solid white")
     contenttab.style.borderBottom = ("4px solid white")

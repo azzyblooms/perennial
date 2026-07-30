@@ -18,6 +18,7 @@ if(localStorage.getItem("projectbrisket") === null) {
 const tbper = document.getElementById("tbper")
 const tbmus = document.getElementById("tbmus")
 const tblik = document.getElementById("tblik")
+const tbblog = document.getElementById("tbblog")
 const tbabt = document.getElementById("tbabt")
 const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
@@ -36,6 +37,7 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
+tbblog.addEventListener('mousedown', () => go("/blog/"))
 
 
 document.addEventListener('keydown', (event) => {

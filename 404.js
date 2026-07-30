@@ -26,6 +26,7 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
+tbblog.addEventListener('mousedown', () => go("/blog/"))
 
 
 document.addEventListener('DOMContentLoaded', () => {

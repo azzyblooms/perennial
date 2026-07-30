@@ -47,6 +47,7 @@ const tbmus = document.getElementById("tbmus")
 const tblik = document.getElementById("tblik")
 const tbabt = document.getElementById("tbabt")
 const tbproj = document.getElementById("tbproj")
+const tbblog = document.getElementById("tbblog")
 const tbcon = document.getElementById("tbcon")
 
 const BASE = window.location.hostname === "azzyblooms.github.io"
@@ -61,6 +62,7 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
+tbblog.addEventListener('mousedown', () => go("/blog/"))
 
 yapincoming.addEventListener('mouseenter', () => {
     hoversound.cloneNode(true).play();

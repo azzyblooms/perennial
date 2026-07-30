@@ -26,6 +26,7 @@ const tblik = document.getElementById("tblik")
 const tbabt = document.getElementById("tbabt")
 const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
+const tbblog = document.getElementById("tbblog")
 const brisket = document.getElementById("brisket")
 const docage = document.getElementById("age")
 const basket = document.getElementById("funfactbasket")
@@ -78,6 +79,7 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
+tbblog.addEventListener('mousedown', () => go("/blog/"))
 
 const birthdate = dayjs("2010-02-03T07:52:00");
 
@@ -159,7 +161,7 @@ basket.addEventListener('mousedown', () => {
     fact.style.opacity = 1;
     if (factsviewed >= 10 && aboutbrisket == 0 && safetycheck == 0) {
         if (factsviewed > 10) {
-            fact.style.transform = (`scale(${Math.pow((factsviewed / 9), 1.2)})`)
+            fact.style.transform = (`scale(${Math.pow((factsviewed / 9))})`)
         }
         facttext.textContent = null;
         brisket.textContent = "≽^-⩊-^≼";
@@ -458,7 +460,7 @@ async function getTime() {
 getTime();
 setInterval(getTime, 1000);
 
-let factsviewed = 9;
+let factsviewed = 6;
 const facts = [
     "1. I saw Angine de Poitrine in concert.",
     "2. My favourite fruit is mango.",

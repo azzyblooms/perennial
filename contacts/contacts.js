@@ -24,6 +24,7 @@ const tblik = document.getElementById("tblik")
 const tbabt = document.getElementById("tbabt")
 const tbproj = document.getElementById("tbproj")
 const tbcon = document.getElementById("tbcon")
+const tbblog = document.getElementById("tbblog")
 const act = document.getElementById("act")
 const brisket = document.getElementById("brisket")
 
@@ -115,6 +116,7 @@ tblik.addEventListener('mousedown', () => go("/likes/"))
 tbabt.addEventListener('mousedown', () => go("/about/"))
 tbproj.addEventListener('mousedown', () => go("/projects/"))
 tbcon.addEventListener('mousedown', () => go("/contacts/"))
+tbblog.addEventListener('mousedown', () => go("/blog/"))
 
 act.addEventListener('mouseenter', () => {
     act.textContent = ("CAT")

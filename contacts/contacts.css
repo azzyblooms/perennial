@@ -37,7 +37,7 @@ html {
     transition: transform ease 200ms;
     user-select: none;
     cursor: pointer;
-    color:rgb(255, 238, 254);
+    color:rgb(255, 211, 252);
 }
 @keyframes unsquish {
     from {
