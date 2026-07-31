@@ -75,7 +75,7 @@ const texts = [
     i've been using these flower motifs for my websites ever since <strong>blossom</strong>, an old static page i made for moonshot (but never shipped)
 
     anyways, i started making this website back in april/may to grind out some last-minute hours for sleepover. unfortunately, i had so many big plans for it that i couldn't fully realize, so i had to continue it in macondo.
-    this website is a bit of a mix of different styles, because i've done much of my css and animation learning over the <strong>46</strong> hours i've tracked. hence why the blog page is so aesthetic and the likes page is so boring.
+    this website is a bit of a mix of different styles, because i've done much of my css and animation learning over the <strong>48</strong> hours i've tracked. hence why the blog page is so aesthetic and the likes page is so boring.
     honestly, the hardest part about making this website might've been finding stuff about me to yap about 😭😭😭 maybe i'm not all that special gng
 
     anyways, that's all i have to say for now! see ya real soon!!!
