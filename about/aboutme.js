@@ -49,13 +49,13 @@ const img5 = document.getElementById("outphotoright")
 const images = [1, 2, 3, 4, 5, 6, 7];
 const docimg = [img1, img2, img3, img4, img5];
 const subtitles = {
-    "1": "this is a placeholder! image #1",
-    "2": "this is a placeholder! image #2",
-    "3": "this is a placeholder! image #3",
-    "4": "this is a placeholder! image #4",
-    "5": "this is an alto saxophone.",
-    "6": "this is a placeholder! image #6",
-    "7": "this is a placeholder! image #7",
+    "1": "when the campfire ottawa cookies come out sizzling",
+    "2": "my hack club photo album! slot to be filled",
+    "3": "my hack club photo album! slot to be filled",
+    "4": "my hack club photo album! slot to be filled",
+    "5": "my hack club photo album! slot to be filled",
+    "6": "my hack club photo album! slot to be filled",
+    "7": "my hack club photo album! slot to be filled"
 }
 const subtitletext = document.getElementById("photocaption")
 

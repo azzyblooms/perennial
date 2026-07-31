@@ -14,6 +14,7 @@ body {
     background-size: 60px 60px;
     animation:revbganime 3s linear infinite;
 }
+
 #topbar {
     border-bottom:4px solid white;
     width:100%;
@@ -564,6 +565,7 @@ a {
     border-radius: 5px;
     margin-top:40px;
     z-index:-1;
+    margin-bottom:20px;
 }
 #activitytitle {
     display:inline;
@@ -664,12 +666,16 @@ a {
     border-radius:5px;
     margin-top:20px;
     margin-bottom:20px;
+    transition: transform ease 300ms;
+    background-color:black;
 }
 #bottomimg2 {
     border:4px solid white;
     border-radius:5px;
     margin-top:20px;
     margin-bottom:20px;
+    transition: transform ease 300ms;
+    background-color:black;
 }
 @keyframes spin {
     from {

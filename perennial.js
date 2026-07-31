@@ -221,11 +221,12 @@ const buildcolouralt = "rgb(150, 100, 66)";
 const compcolour = "rgb(87, 170, 224)";
 const compcolouralt = "rgb(66, 116, 150)";
 
-
+let currentTab = "band";
 
 
 
 bandtab.addEventListener('mousedown', () => {
+    currentTab = "band";
     bandtab.style.backgroundColor = (`${bandcolour}`);
     contenttab.style.backgroundColor = (`${contentcolouralt}`);
     buildtab.style.backgroundColor = (`${buildcolouralt}`);
@@ -252,6 +253,7 @@ bandtab.addEventListener('mousedown', () => {
 
 })
 contenttab.addEventListener('mousedown', () => {
+    currentTab = "content";
     contenttab.style.backgroundColor = (`${contentcolour}`);
     bandtab.style.backgroundColor = (`${bandcolouralt}`);
     buildtab.style.backgroundColor = (`${buildcolouralt}`);
@@ -268,14 +270,68 @@ contenttab.addEventListener('mousedown', () => {
     comptab.style.borderBottom = ("4px solid white")
     compfile.pause();
     tabyap.textContent = ("i upload content for fun on my youtube and instagram accounts! i mostly make music content and practice videos, but tbh i'll just post whatever i feel like 😭😭😭 check out my contacts page to learn more!")
-    tabimg.src = ("/perennial/images/azzy.png");
+    tabimg.src = ("/perennial/images/photographs/channelpic.jpg");
     tabimg.style.borderRadius = ("5px");
     tabtitle.textContent = ("MY CONTENT")
     tabimg.style.animation = ("none");
-    bottomimg1.src = ("/perennial/images/azzy.png");
-    bottomimg2.src = ("/perennial/images/azzy.png");
+    bottomimg1.src = ("/perennial/images/photographs/third44.avif");
+    bottomimg2.src = ("/perennial/images/photographs/bcs.avif");
 })
+
+tabimg.addEventListener('mouseenter', () => {
+    if(currenTab == ("content")) {
+        tabimg.style.transform = ("scale(1.08)")
+        tabimg.style.cursor = ("pointer")
+    }
+})
+tabimg.addEventListener('mouseleave', () => {
+    tabimg.style.transform = ("scale(1)")
+    tabimg.style.cursor = ("auto")
+})
+tabimg.addEventListener('mousedown', () => {
+    if(currentTab == ("content")) {
+        clicksound.cloneNode(true).play();
+        window.open("https://www.youtube.com/@heptabysmal", "_blank")
+    }
+})
+bottomimg1.addEventListener('mouseenter', () => {
+    if(currentTab == ("content")) {
+        bottomimg1.style.transform = ("scale(1.08)")
+        bottomimg1.style.cursor = ("pointer")
+    }
+})
+bottomimg1.addEventListener('mouseleave', () => {
+    bottomimg1.style.transform = ("scale(1)")
+    bottomimg1.style.cursor = ("auto")
+})
+bottomimg1.addEventListener('mousedown', () => {
+    if(currentTab == ("content")) {
+        clicksound.cloneNode(true).play();
+        window.open("https://www.youtube.com/watch?v=LSUg0w8iL2w", "_blank")
+    }
+})
+bottomimg2.addEventListener('mouseenter', () => {
+    if(currentTab == ("content")) {
+        bottomimg2.style.transform = ("scale(1.08)")
+        bottomimg2.style.cursor = ("pointer")
+    }
+})
+bottomimg2.addEventListener('mouseleave', () => {
+    bottomimg2.style.transform = ("scale(1)")
+    bottomimg2.style.cursor = ("auto")
+})
+bottomimg2.addEventListener('mousedown', () => {
+    if(currentTab == ("content")) {
+        clicksound.cloneNode(true).play();
+        window.open("https://www.youtube.com/watch?v=0On8Yw8d2mg", "_blank");
+    }
+})
+
+
+
+
 buildtab.addEventListener('mousedown', () => {
+    currentTab = "build";
     buildtab.style.backgroundColor = (`${buildcolour}`);
     contenttab.style.backgroundColor = (`${contentcolouralt}`);
     bandtab.style.backgroundColor = (`${bandcolouralt}`);
@@ -292,14 +348,15 @@ buildtab.addEventListener('mousedown', () => {
     comptab.style.borderBottom = ("4px solid white")
     compfile.pause();
     tabyap.textContent = ("i do actually like hardware and engineering, just not when it's coding! i like to build contraptions and doohickeys with random stuff. i really want to get into 3d printing, and i'm working on a 3d printable contra-alto clarinet extension!")
-    tabimg.src = ("/perennial/images/azzy.png");
+    tabimg.src = ("/perennial/images/photographs/tinkercad.png");
     tabimg.style.borderRadius = ("5px");
     tabimg.style.animation = ("none");
     tabtitle.textContent = ("CREATIONS")
-    bottomimg1.src = ("/perennial/images/azzy.png");
-    bottomimg2.src = ("/perennial/images/azzy.png");
+    bottomimg1.src = ("/perennial/images/photographs/tba.png");
+    bottomimg2.src = ("/perennial/images/photographs/tba.png");
 })
 comptab.addEventListener('mousedown', () => {
+    currentTab = "comp";
     buildtab.style.backgroundColor = (`${buildcolouralt}`);
     contenttab.style.backgroundColor = (`${contentcolouralt}`);
     bandtab.style.backgroundColor = (`${bandcolouralt}`);
@@ -321,8 +378,8 @@ comptab.addEventListener('mousedown', () => {
     tabimg.src = ("/perennial/images/vinyl.png");
     tabimg.style.borderRadius = ("125px");
     tabtitle.textContent = ("COMPOSITION")
-    bottomimg1.src = ("/perennial/images/azzy.png");
-    bottomimg2.src = ("/perennial/images/azzy.png");
+    bottomimg1.src = ("/perennial/images/photographs/tba.png");
+    bottomimg2.src = ("/perennial/images/photographs/tba.png");
 })
 tabimg.addEventListener('mousedown', () => {
     if(tabimg.style.borderRadius === ("125px")) {
