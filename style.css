@@ -595,6 +595,7 @@ a {
     align-self:baseline;
     border-radius:5px;
     justify-self:left;
+    object-fit: cover;
     margin-top:10px;
     background-color: rgb(43, 83, 110);
     animation-fill-mode: forwards;

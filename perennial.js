@@ -244,11 +244,11 @@ bandtab.addEventListener('mousedown', () => {
 
     compfile.pause();
     tabyap.textContent = ("i am part of the senior concert band at my high school! we perform major shows multiple times each year along with some smaller performances scattered in between. if you're in ottawa, come see us!!")
-    tabimg.src = ("/perennial/images/azzy.png");
+    tabimg.src = ("/perennial/images/photographs/bigdyl.jpg");
     tabimg.style.borderRadius = ("5px");
     tabtitle.textContent = ("CONCERT BAND")
-    bottomimg1.src = ("/perennial/images/azzy.png");
-    bottomimg2.src = ("/perennial/images/azzy.png");
+    bottomimg1.src = ("/perennial/images/photographs/baribuds.jpg");
+    bottomimg2.src = ("/perennial/images/photographs/concertband.png");
 
 })
 contenttab.addEventListener('mousedown', () => {
